@@ -1,19 +1,29 @@
 <div class="row" ng-controller="navController">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        
+        <!--Display the location of the current slot machine-->
         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">   
             Current Location {{location}}
         </div>
+        
+        <!--Display the serial number of the current slot machine-->
         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">   
             Current Serial Number {{serialNumber}}
         </div>
-        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">   
+        
+        <!--Display the button navigate backwards to a previous slot machine-->
+        <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1">   
             <button type="button" class="btn btn-sm" ng-click="previousSlotMachine()">Backward</button>    
         </div>
-        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">   
+        <!--Display the button navigate forward to the next slot machine-->
+        <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1">   
             <button type="button" class="btn btn-sm" ng-click="nextSlotMachine()">Forward</button>    
         </div>
-        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">   
-            <button type="button" class="btn btn-sm" ng-click="searchSlotMachine('1-2-5')">Search</button>    
+        
+        <!--Display a input box to search for a chosen slot machine-->
+        <div class="col-xs-2 col-sm-2 col-md-4 col-lg-4 input-group"> 
+            <input type="text" ng-model="userLocation" size="6" placeholder="Search" ng-click="searchSlotMachine('1-2-2')">
+            <button type="submit" class="btn btn-sm" ng-click="searchSlotMachine(userLocation)"><i class="fa fa-search" aria-hidden="true"></i></button>            
         </div>
     </div>    
 </div><!--end of Nav Page-->

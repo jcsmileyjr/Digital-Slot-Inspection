@@ -4,7 +4,11 @@ myApp.controller('navController', ["$scope", "SlotMachine",  function($scope, Sl
     
     //function to setup the current slot machine location and serial number    
     $scope.setSlotMachine = function(slotMachine){
+        
+        /*assigns the slot machine, received as a parameter, location to the scope's location */
         $scope.location= slotMachine.location;
+        
+        /*assigns the slot machine, received as a parameter, serial number to the scope's serial number */
         $scope.serialNumber = slotMachine.serialNumber;
     };
     
@@ -32,10 +36,10 @@ myApp.controller('navController', ["$scope", "SlotMachine",  function($scope, Sl
     $scope.searchSlotMachine = function(userLocation){
         
         //use the SlotMachine service to get the slot machine of the user choice to setup a new currentSlotMachine
-        $scope.currentSlotMachine = SlotMachine.getSearchSlotMachine(userLocation);
-        
+        $scope.currentSlotMachine = SlotMachine.getSearchSlotMachine(userLocation);      
         //function to setup the new current slot machine location and serial number
-        $scope.setSlotMachine($scope.currentSlotMachine);  
+        $scope.setSlotMachine($scope.currentSlotMachine);
+        
     };
   
 }]);
