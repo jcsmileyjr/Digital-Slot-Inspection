@@ -8,35 +8,51 @@ myApp.factory('SlotMachine', function(){
     var currentLocation = {"location":4};
     
     return {
+        
         /*function to return the current slot machine object*/
         getCurrentSlotMachine: function(){
+            /*return the slot machine object at that array position*/
             return slotMachines[currentLocation.location];
         },
         
         /*function to return the slot machine before the current slot machine location*/
         getPreviousSlotMachine: function(){
+            
+            /*check if the current location is at the first element in the array*/
             if(currentLocation.location==0)
                 {
-                    
-                    currentLocation.location= slotMachines.length-1;     
-                    return slotMachines[currentLocation.location];
+                    /*assign the last index in the array to currentLocation*/
+                    currentLocation.location= slotMachines.length-1;
+            
+                    /*return the slot machine object at that array position*/
+                    return slotMachines[currentLocation.location]; 
                 }
             else 
                 {   
+                    /*assign the previous currentLocaton number minus one to currentLocation*/
                     currentLocation.location= currentLocation.location - 1;
+                    
+                    /*return the slot machine object at that array position*/
                     return slotMachines[currentLocation.location];
                 }
         },
         /*function to return the slot machine before the current slot machine location*/
         getNextSlotMachine: function(){
+            /*check if the next location index is the last element in the array*/
             if((currentLocation.location + 1) == slotMachines.length)
-                {            
-                    currentLocation.location= 0;  
+                {   
+                    /*assign the first index in the array to currentLocation*/
+                    currentLocation.location= 0;
+                    
+                    /*return the slot machine object at that array position*/
                     return slotMachines[currentLocation.location];
                 }
             else 
-                {
-                    currentLocation.location= currentLocation.location + 1;
+                {   
+                    /*assign the previous currentLocaton number plus one to currentLocation*/
+                    currentLocation.location += 1;
+                    
+                    /*return the slot machine object at that array position*/
                     return slotMachines[currentLocation.location];
                 }
         },
@@ -44,8 +60,14 @@ myApp.factory('SlotMachine', function(){
         /*function to return the slot machine from a location chosen by the user*/
         getSearchSlotMachine: function(userLocation){   
             for(var i=0;i<slotMachines.length;i++){
-                if(userLocation===slotMachines[i].location){          
-                    currentLocation.location = [i];                             
+                
+                /*check if userLocaton is equal to the slot machine location at the current element/index of the array*/
+                if(userLocation===slotMachines[i].location){
+                    
+                    /*assign the current number of loops, converted to an interger, to currentLocation*/
+                    currentLocation.location = parseInt([i]);
+                    
+                    /*return the slot machine object at that array position*/
                     return slotMachines[currentLocation.location];
                 }/*End of if statement*/
             }/*End of i-loop*/
