@@ -1,4 +1,4 @@
-/*service returns a slot machine based on the location property from the slotMachine array of objects*/
+/*a service that returns a slot machine based on the location property from the slotMachine array of objects*/
 myApp.factory('SlotMachine', function(){
 
     /*array of slot machine objects*/
