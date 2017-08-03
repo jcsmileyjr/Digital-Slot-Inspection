@@ -1,0 +1,43 @@
+<div class="row" ng-controller="issueController">
+    
+    <!--Sets the page to the size of the view-port -->
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        
+        <!--Display the top row of the compliance issues buttons-->
+        <div class="row">   
+            <!--First column of the top row featuring the Meal Book Issues-->
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">   
+                <button type="button" class="btn btn-lg" ui-sref="mealBook">Meal Book</button>           
+            </div>
+            
+            <!--Second column of the top row featuring the Buttons Issues-->
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">   
+                <button type="button" class="btn btn-lg" ng-click="buttonsPage()">Buttons</button>           
+            </div>  
+            
+            <!--Third column of the top row featuring the Reel Strip Issues-->
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">   
+                <button type="button" class="btn btn-lg" ng-click="reelStripPage()">Reel Strip</button>           
+            </div>              
+        </div><!--end of top row-->
+        
+        <!--Display the bottom row of the compliance issues buttons-->
+        <div class="row">   
+            <!--First column of the bottom row featuring the Tower Lights Issues-->
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">   
+                <button type="button" class="btn btn-lg" ng-click="towerLightsPage()">Tower Lights</button>           
+            </div>
+            
+            <!--Second column of the bottom row featuring the TouchScreen Issues-->
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">   
+                <button type="button" class="btn btn-lg" ng-click="touchScreenPage()">Touchscreen</button>           
+            </div>  
+            
+            <!--Third column of the bottom row featuring the Secured Boards Issues-->
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">   
+                <button type="button" class="btn btn-lg" ng-click="securedBoardPage()">Secured CPU</button>           
+            </div>              
+        </div><!--end of lower row-->
+        <h3>Total Number of Issues Found {{numberOfIssues}}</h3>
+    </div><!--end of view-port -->    
+</div><!--end of Nav Page-->
