@@ -1,7 +1,8 @@
 myApp.controller('navController', ["$scope", "SlotMachine","Compliance", "IssueCounter",  function($scope, SlotMachine, Compliance, IssueCounter){
-    //use the SlotMachine service to get the slot machine at the current location to setup a new currentSlotMachine    
     
+    //use the SlotMachine service to get the slot machine at the current location to setup a new currentSlotMachine    
     $scope.currentSlotMachine = SlotMachine.getCurrentSlotMachine();
+    
     //function to setup the current slot machine location and serial number    
     $scope.setSlotMachine = function(slotMachine){
         
@@ -13,7 +14,7 @@ myApp.controller('navController', ["$scope", "SlotMachine","Compliance", "IssueC
     };
     
     //use the setSlotMachine function to setup the starting slot machine location and serial number
-    $scope.setSlotMachine($scope.currentSlotMachine);
+    $scope.setSlotMachine($scope.currentSlotMachine);    
     
     //function use by the navigation "Backward" button to move the slot machine location backward
     $scope.previousSlotMachine = function(){
@@ -60,7 +61,7 @@ myApp.controller('navController', ["$scope", "SlotMachine","Compliance", "IssueC
         $scope.numberOfIssues = IssueCounter.getCurrentCount();
             
         //function to setup the new current slot machine location and serial number
-        $scope.setSlotMachine($scope.currentSlotMachine);  
+        $scope.setSlotMachine($scope.currentSlotMachine);         
         
     }
     

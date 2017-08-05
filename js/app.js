@@ -18,7 +18,7 @@ myApp.config(['$stateProvider', '$urlRouterProvider',function($stateProvider, $u
         .state('mealBook', {
             url:'/mealBook',
             templateUrl: 'mealBook/mealBook.html',
-            controller: "mealBookController"        
+            controller: "mealBookController"
         })
     
 }]);
