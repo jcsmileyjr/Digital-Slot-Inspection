@@ -31,7 +31,6 @@ myApp.factory('SlotMachine', function(){
             
                     /*return the slot machine object at that array position*/
                     return slotMachines[currentLocation.location]; 
-                    //newSlot.slot = slotMachines[currentLocation.location];
                 }
             else 
                 {   
@@ -40,7 +39,6 @@ myApp.factory('SlotMachine', function(){
                     
                     /*return the slot machine object at that array position*/
                     return slotMachines[currentLocation.location];
-                    //newSlot.slot = slotMachines[currentLocation.location];
                 }
         },
         /*function to return the slot machine before the current slot machine location*/
@@ -53,7 +51,6 @@ myApp.factory('SlotMachine', function(){
                     
                     /*return the slot machine object at that array position*/
                     return slotMachines[currentLocation.location];
-                    //return presentSlotMachine.slot;
                 }
             else 
                 {   
@@ -62,7 +59,6 @@ myApp.factory('SlotMachine', function(){
                     
                     /*return the slot machine object at that array position*/
                     return slotMachines[currentLocation.location];
-                    //return presentSlotMachine.slot;
                 }
         },
         
@@ -78,7 +74,6 @@ myApp.factory('SlotMachine', function(){
                     
                     /*return the slot machine object at that array position*/
                     return slotMachines[currentLocation.location];
-                    //return presentSlotMachine.slot;
                 }/*End of if statement*/
             }/*End of i-loop*/
         },/*end of getSearchSlotMachine method*/
