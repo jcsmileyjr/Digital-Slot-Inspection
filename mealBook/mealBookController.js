@@ -27,7 +27,7 @@ myApp.controller('mealBookController',  function($scope, $state, MealBook, Issue
     
     //redirect to issues.html
     $scope.confirm = function(){
-        $state.go('issues');
+        $state.go('nav');
     };
     
 });//end of the issueController Service

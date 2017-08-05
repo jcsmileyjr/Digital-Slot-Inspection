@@ -45,7 +45,7 @@ describe("IssueCounter Sevice:", function() {
             expect(issueCount).toEqual(0);
         }); 
         
-        it('Does not decrease below 0 when called', function(){
+        it('Does not decrease below 0 when called or cannot be a negative', function(){
             IssueCounter.subtractFromCount();
             IssueCounter.subtractFromCount();
             IssueCounter.subtractFromCount();
@@ -53,5 +53,14 @@ describe("IssueCounter Sevice:", function() {
             expect(issueCount).not.toBeLessThan(0);
         });        
     });
+    
+    describe("resetCount()", function(){
+        it('Reset the count to 0', function(){
+            IssueCounter.addToCount();
+            IssueCounter.resetCount();
+            issueCount = IssueCounter.getCurrentCount();
+            expect(issueCount).toEqual(0);
+        });
+    });    
      
 });/*End of Slot Machine service Describe block*/

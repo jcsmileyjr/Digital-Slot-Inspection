@@ -21,7 +21,12 @@ myApp.factory('IssueCounter', function () {
         subtractFromCount: function(){
             if(issueCounter.count >=1)
                 issueCounter.count = issueCounter.count - 1;
-        }        
+        },
+        
+        //reset the issueCounter
+        resetCount: function(){
+            issueCounter.count = 0;    
+        }   
         
     }/*End of main Return*/
     

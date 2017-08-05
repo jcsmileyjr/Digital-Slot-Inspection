@@ -5,14 +5,14 @@ var myApp = angular.module('DSI', ['ui.router']);
 myApp.config(['$stateProvider', '$urlRouterProvider',function($stateProvider, $urlRouterProvider, $state) {
 
     //If no route or link is select, the app redirects to the logIn page
-    $urlRouterProvider.otherwise('/issues');
+    $urlRouterProvider.otherwise('/nav');
 
     $stateProvider
         //The issues state redirects the user to the issues.html template and issueController via the /issues url. 
-        .state('issues', {
-            url:'/issues',
-            templateUrl: 'issues/issues.html',
-            controller: "issueController"
+        .state('nav', {
+            url:'/nav',
+            templateUrl: 'nav/nav.html',
+            controller: "navController"
         })
         //The input state redirects the user to the input.html template and inputController via the /input url. 
         .state('mealBook', {

@@ -2,7 +2,7 @@
     
     /* Unit Test Code */
 describe("Slot Machine Sevice: currentLocation object", function() {
-    var SlotMachine, currentSlotMachine;
+    var SlotMachine, currentSlotMachine, count;
     
     //setup the angular app before each unit test
     beforeEach(module('DSI'));
@@ -48,7 +48,8 @@ describe("Slot Machine Sevice: currentLocation object", function() {
     });
         
     describe("getTotalCountOfSlotMachines()", function(){
-        xit('return the total count of slot machines at start up', function(){
+        it('return the total count of slot machines at start up', function {             count = SlotMachine.getTotalCountOfSlotMachines();
+            expect(count).toEqual(10);
         });
     });     
     
