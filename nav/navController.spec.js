@@ -39,14 +39,15 @@ describe('navController', function(){
             //scope.setSlotMachine(currentSlotMachine);
             expect(scope.serialNumber).toBe(100105);
         });
-        
+        /*
         xit('Display the EPROM signature of the current slot machine)', function(){
             expect(scope.EPROM).toBe("ASDF1005");
         });
         
         xit('Display the hold percentage of the current slot machine)', function(){
             expect(scope.holdPercentage).toBe(89.1);
-        });        
+        });
+        */
     });   
 
     

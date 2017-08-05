@@ -1,4 +1,4 @@
-<div class="row" ng-controller="navController">
+<div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         
         <!--Display the location of the current slot machine-->
@@ -25,5 +25,73 @@
             <input type="text" ng-model="userLocation" size="6" placeholder="Search" ng-click="searchSlotMachine('1-2-2')">
             <button type="submit" class="btn btn-sm" ng-click="searchSlotMachine(userLocation)"><i class="fa fa-search" aria-hidden="true"></i></button>            
         </div>
+        
+    </div>
+    <p>{{hope}}</p>
+</div><!--end of Nav Section-->
+<div class="row">
+    
+    <!--Sets the page to the size of the view-port -->
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <h3>Click a Button to Document Compliance Issues</h3>
+        <!--Display the top row of the compliance issues buttons-->
+        <div class="row">   
+            <!--First column of the top row featuring the Meal Book Issues-->
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">   
+                <button type="button" class="btn btn-lg" ui-sref="mealBook">Meal Book</button>           
+            </div>
+            
+            <!--Second column of the top row featuring the Buttons Issues-->
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">   
+                <button type="button" class="btn btn-lg" ng-click="buttonsPage()">Buttons</button>           
+            </div>  
+            
+            <!--Third column of the top row featuring the Reel Strip Issues-->
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">   
+                <button type="button" class="btn btn-lg" ng-click="reelStripPage()">Reel Strip</button>           
+            </div>              
+        </div><!--end of top row-->
+        
+        <!--Display the bottom row of the compliance issues buttons-->
+        <div class="row">   
+            <!--First column of the bottom row featuring the Tower Lights Issues-->
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">   
+                <button type="button" class="btn btn-lg" ng-click="towerLightsPage()">Tower Lights</button>           
+            </div>
+            
+            <!--Second column of the bottom row featuring the TouchScreen Issues-->
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">   
+                <button type="button" class="btn btn-lg" ng-click="touchScreenPage()">Touchscreen</button>           
+            </div>  
+            
+            <!--Third column of the bottom row featuring the Secured Boards Issues-->
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">   
+                <button type="button" class="btn btn-lg" ng-click="securedBoardPage()">Secured CPU</button>           
+            </div>              
+        </div><!--end of lower row-->
+        <h3>Total Number of Issues Found {{numberOfIssues}}</h3>
+    </div><!--end of view-port -->    
+</div><!--end of Issue Section-->
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <h3>Click a button to Save and Continue</h3>
+        <div class="row">            
+
+            <!--Display the button navigate forward to the next slot machine-->
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">   
+                <button type="button" class="btn btn-md" ng-click="">Skip and Continue</button>    
+            </div>
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">      
+                <button type="button" class="btn btn-md" ng-click="saveCompleted()">Save and Continue</button>    
+            </div>
+            <!--Display the button navigate forward to the next slot machine-->
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">    
+                <button type="button" class="btn btn-md" ng-click="">Compile &amp; Export Report</button>    
+            </div>
+            <!--Display the button navigate forward to the next slot machine-->
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">   
+                <button type="button" class="btn btn-md" ng-click="nextSlotMachine()">List of Issues Found</button>    
+            </div>            
+        </div>
     </div>    
-</div><!--end of Nav Page-->
+</div><!--end of Action Section-->
