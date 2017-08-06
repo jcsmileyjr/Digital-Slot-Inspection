@@ -56,8 +56,12 @@ myApp.factory('Compliance', ["SlotMachine", "IssueCounter", "MealBook", function
         
         //reset all compliance issues
         resetAllComplianceTrackers: function(){
+            //reset the issueCount object to 0;
             IssueCounter.resetCount();
+            
+            //Reset the MealBook tracker to empty and MealBook array found property to false. Therefore reseting checkboxes on the MealBook.html page.
             MealBook.resetMealBookTracker();
+            MealBook.resetMealBookCheckbox();
         }
                 
         

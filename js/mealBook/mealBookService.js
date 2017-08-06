@@ -41,6 +41,13 @@ myApp.factory('MealBook', function () {
         //function to return the list of Mealbook compliance issues.
         getMealBook: function(){
             return mealBook;
+        },
+        
+        //Loop through each element in the mealBook array resetting each element issue's found property to false. This is use when a user save and continue to another slot machine.
+        resetMealBookCheckbox(){                        
+            for(var i=0;i<mealBook.length;i++){
+                mealBook[i].found = false;
+            }
         }
         
     }/*End of main Return*/
