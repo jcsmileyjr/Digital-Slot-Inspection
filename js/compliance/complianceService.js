@@ -1,5 +1,5 @@
 /*Update the compliance object so it can be listed and sorted. In the desktop version will save to file. */
-myApp.factory('Compliance', ["SlotMachine", "IssueCounter", "MealBook", function (SlotMachine, IssueCounter, MealBook) {
+myApp.factory('Compliance', ["SlotMachine", "IssueCounter", "MealBook","Button", function (SlotMachine, IssueCounter, MealBook, Button) {
 
     //array to hold a saved slot machine with compliance issues 
     var compliance = [];
@@ -14,11 +14,12 @@ myApp.factory('Compliance', ["SlotMachine", "IssueCounter", "MealBook", function
            //current slot machine number of compliance issues found
            var numberOfIssues = IssueCounter.getCurrentCount();
            
-           //array of MealBook compliance issues
+           //list of arrays of compliance issues
            var mealBook = MealBook.getMealBookTracker();
+           var button = Button.getButtonTracker();
 
            //add to the array the current slot machine identifer and compliance issues
-           compliance.push({"serialNumber":currentSlotMachine.serialNumber, "numberOfIssues":numberOfIssues, "completed": true, "mealBook": mealBook});
+           compliance.push({"serialNumber":currentSlotMachine.serialNumber, "numberOfIssues":numberOfIssues, "completed": true, "mealBook": mealBook, "button":button});
            
 	   },//end of completed function
         
@@ -29,7 +30,7 @@ myApp.factory('Compliance', ["SlotMachine", "IssueCounter", "MealBook", function
             var currentSlotMachine = SlotMachine.getCurrentSlotMachine();
            
             //add to the array the current slot machine identifer and compliance issues            
-            compliance.push({"serialNumber":currentSlotMachine.serialNumber, "numberOfIssues":0, "completed": true, "mealBook":[]});
+            compliance.push({"serialNumber":currentSlotMachine.serialNumber, "numberOfIssues":0, "completed": true, "mealBook":[], "button":[]});
             
         },
         
@@ -42,11 +43,12 @@ myApp.factory('Compliance', ["SlotMachine", "IssueCounter", "MealBook", function
            //current slot machine number of compliance issues found
            var numberOfIssues = IssueCounter.getCurrentCount();
            
-           //array of MealBook compliance issues
+           //list of arrays of compliance issues
            var mealBook = MealBook.getMealBookTracker();
+           var button = Button.getButtonTracker();
 
            //add to the array the current slot machine identifer and compliance issues
-           compliance.push({"serialNumber":currentSlotMachine.serialNumber, "numberOfIssues":numberOfIssues, "completed": false, "mealBook":mealBook});            
+           compliance.push({"serialNumber":currentSlotMachine.serialNumber, "numberOfIssues":numberOfIssues, "completed": false, "mealBook":mealBook, "button":button});            
         }, 
         
         //return the compliance array of objects
@@ -59,9 +61,16 @@ myApp.factory('Compliance', ["SlotMachine", "IssueCounter", "MealBook", function
             //reset the issueCount object to 0;
             IssueCounter.resetCount();
             
+            //Reset all compliance trackers to empty and compliance arrays found property to false. Therefore reseting checkboxes on the compliance pages.
+            MealBook.resetMealBookTracker();
+            MealBook.resetMealBookCheckbox();
+            Button.resetButtonTracker();
+            Button.resetButtonCheckbox();
+
             //Reset the MealBook tracker to empty and MealBook array found property to false. Therefore reseting checkboxes on the MealBook.html page.
             MealBook.resetMealBookTracker();
             MealBook.resetMealBookCheckbox();
+
         }
                 
         
