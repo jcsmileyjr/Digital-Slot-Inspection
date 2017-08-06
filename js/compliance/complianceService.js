@@ -67,10 +67,6 @@ myApp.factory('Compliance', ["SlotMachine", "IssueCounter", "MealBook","Button",
             Button.resetButtonTracker();
             Button.resetButtonCheckbox();
 
-            //Reset the MealBook tracker to empty and MealBook array found property to false. Therefore reseting checkboxes on the MealBook.html page.
-            MealBook.resetMealBookTracker();
-            MealBook.resetMealBookCheckbox();
-
         }
                 
         
