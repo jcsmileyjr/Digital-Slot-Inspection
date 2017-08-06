@@ -4,21 +4,27 @@ var myApp = angular.module('DSI', ['ui.router']);
 // A .config function is used to provide 'state' and url routing for the app thru the stateProvider (from ui-router).
 myApp.config(['$stateProvider', '$urlRouterProvider',function($stateProvider, $urlRouterProvider, $state) {
 
-    //If no route or link is select, the app redirects to the logIn page
+    //If no route or link is select, the app redirects to the nav page
     $urlRouterProvider.otherwise('/nav');
 
     $stateProvider
-        //The issues state redirects the user to the issues.html template and issueController via the /issues url. 
+        //The nav state redirects the user to the nav.html template and navController via the /nav url. 
         .state('nav', {
             url:'/nav',
             templateUrl: 'nav/nav.html',
             controller: "navController"
         })
-        //The input state redirects the user to the input.html template and inputController via the /input url. 
+        //The mealBook state redirects the user to the mealBook.html template and mealBookController via the /mealBook url. 
         .state('mealBook', {
             url:'/mealBook',
             templateUrl: 'mealBook/mealBook.html',
             controller: "mealBookController"
         })
+        //The button state redirects the user to the button.html template and buttonController via the /button url. 
+        .state('button', {
+            url:'/button',
+            templateUrl: 'buttons/button.html',
+            controller: "buttonController"
+        })    
     
 }]);
