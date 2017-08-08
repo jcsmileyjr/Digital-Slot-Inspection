@@ -66,7 +66,6 @@ myApp.factory('Compliance', ["SlotMachine", "IssueCounter", "MealBook","Button",
             MealBook.resetMealBookCheckbox();
             Button.resetButtonTracker();
             Button.resetButtonCheckbox();
-
         }
                 
         

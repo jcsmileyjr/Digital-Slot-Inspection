@@ -38,7 +38,7 @@ myApp.factory('Button', function () {
             buttonTracker = [];
         },
         
-        //function to return the list of Mealbook compliance issues.
+        //function to return the list of Buttons compliance issues.
         getButton: function(){
             return button;
         },
