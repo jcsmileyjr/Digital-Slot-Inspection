@@ -1,7 +1,5 @@
 myApp.controller('buttonController',  function($scope, $state, Button, IssueCounter, SlotMachine){
     
-    //$state.reload('button');
-    
     //use the SlotMachine service to get the slot machine at the current location to setup a new currentSlotMachine    
     $scope.currentSlotMachine = SlotMachine.getCurrentSlotMachine();
     
