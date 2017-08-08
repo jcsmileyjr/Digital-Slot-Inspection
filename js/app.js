@@ -25,6 +25,18 @@ myApp.config(['$stateProvider', '$urlRouterProvider',function($stateProvider, $u
             url:'/button',
             templateUrl: 'buttons/button.html',
             controller: "buttonController"
+        })
+        //The lights state redirects the user to the lights.html template and lightsController via the /lights url. 
+        .state('lights', {
+            url:'/lights',
+            templateUrl: 'lights/lights.html',
+            controller: "lightsController"
+        })
+        //The touchscreen state redirects the user to the touchscreen.html template and touchscreenController via the /touchscreen url. 
+        .state('touchscreen', {
+            url:'/touchscreen',
+            templateUrl: 'touchscreen/touchscreen.html',
+            controller: "touchscreenController"
         })    
     
 }]);

@@ -1,5 +1,5 @@
 /*Update the compliance object so it can be listed and sorted. In the desktop version will save to file. */
-myApp.factory('Compliance', ["SlotMachine", "IssueCounter", "MealBook","Button", function (SlotMachine, IssueCounter, MealBook, Button) {
+myApp.factory('Compliance', ["SlotMachine", "IssueCounter", "MealBook","Button", "Lights", "Touchscreen", function (SlotMachine, IssueCounter, MealBook, Button, Lights, Touchscreen) {
 
     //array to hold a saved slot machine with compliance issues 
     var compliance = [];
@@ -17,9 +17,11 @@ myApp.factory('Compliance', ["SlotMachine", "IssueCounter", "MealBook","Button",
            //list of arrays of compliance issues
            var mealBook = MealBook.getMealBookTracker();
            var button = Button.getButtonTracker();
+           var lights = Lights.getLightsTracker();
+           var touchscreen = Touchscreen.getTouchscreenTracker();           
 
            //add to the array the current slot machine identifer and compliance issues
-           compliance.push({"serialNumber":currentSlotMachine.serialNumber, "numberOfIssues":numberOfIssues, "completed": true, "mealBook": mealBook, "button":button});
+           compliance.push({"serialNumber":currentSlotMachine.serialNumber, "numberOfIssues":numberOfIssues, "completed": true, "mealBook": mealBook, "button":button, "lights": lights, "touchscreen":touchscreen});
            
 	   },//end of completed function
         
@@ -30,7 +32,7 @@ myApp.factory('Compliance', ["SlotMachine", "IssueCounter", "MealBook","Button",
             var currentSlotMachine = SlotMachine.getCurrentSlotMachine();
            
             //add to the array the current slot machine identifer and compliance issues            
-            compliance.push({"serialNumber":currentSlotMachine.serialNumber, "numberOfIssues":0, "completed": true, "mealBook":[], "button":[]});
+            compliance.push({"serialNumber":currentSlotMachine.serialNumber, "numberOfIssues":0, "completed": true, "mealBook":[], "button":[], "lights":[], "touchscreen":[]});
             
         },
         
@@ -46,9 +48,11 @@ myApp.factory('Compliance', ["SlotMachine", "IssueCounter", "MealBook","Button",
            //list of arrays of compliance issues
            var mealBook = MealBook.getMealBookTracker();
            var button = Button.getButtonTracker();
+           var lights = Lights.getLightsTracker();
+           var touchscreen = Touchscreen.getTouchscreenTracker();           
 
            //add to the array the current slot machine identifer and compliance issues
-           compliance.push({"serialNumber":currentSlotMachine.serialNumber, "numberOfIssues":numberOfIssues, "completed": false, "mealBook":mealBook, "button":button});            
+           compliance.push({"serialNumber":currentSlotMachine.serialNumber, "numberOfIssues":numberOfIssues, "completed": true, "mealBook": mealBook, "button":button, "lights": lights, "touchscreen":touchscreen});        
         }, 
         
         //return the compliance array of objects
@@ -66,7 +70,10 @@ myApp.factory('Compliance', ["SlotMachine", "IssueCounter", "MealBook","Button",
             MealBook.resetMealBookCheckbox();
             Button.resetButtonTracker();
             Button.resetButtonCheckbox();
-
+            Lights.resetLightsCheckbox();
+            Lights.resetLightsTracker();
+            Touchscreen.resetTouchscreenTracker();
+            Touchscreen.resetTouchscreenCheckbox();
         }
                 
         
