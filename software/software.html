@@ -7,17 +7,16 @@
     <!--inner view-port -->
     <div class="col-xs-10  col-sm-10 col-md-10 col-lg-10">
         <div class="row">
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                Current Location {{location}}
-            </div>
-
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                Current Serial Number {{serialNumber}}
-            </div>        
-
             <div class="col-xs-12  col-sm-12 col-md-12 col-lg-12">
                 <h1>Software Compliance Issues</h1>
             </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                Current EPROM Signature {{signature}}
+            </div>
+
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                Current Hold Percentage {{percentage}}
+            </div>             
         </div>
         <div class="row" ng-repeat="issues in software">
             <input type="checkbox" ng-model="issues.found" ng-change="checked($index)">{{issues.issue}}
