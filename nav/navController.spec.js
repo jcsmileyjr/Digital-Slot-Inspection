@@ -54,7 +54,17 @@ describe('navController', function(){
             expect(scope.holdPercentage).toBe(89.1);
         });
         */
-    });   
+    });
+    
+    describe('setStatus()', function(){
+        // call the setSlotMachine function to set up all outputs from the navController.
+        beforeEach(function() {
+            scope.setSlotMachine(currentSlotMachine);
+        });             
+        it('Display the Incomplete status message', function() {        
+            expect(scope.status.toBe("NOT Been Inspected");
+        });        
+    });        
 
     
 }); /*End of main navController Describe block*/   
