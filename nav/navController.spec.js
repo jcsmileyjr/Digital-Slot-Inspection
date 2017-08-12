@@ -20,7 +20,8 @@ describe('navController', function(){
     }));
     
     describe('getCurrentSlotMachine', function(){
-        it('Return a slot machine object to the currentSlotMachine variable', function() {        expect(currentSlotMachine).toEqual(jasmine.any(Object));
+        it('Return a slot machine object to the currentSlotMachine variable', function() {        
+            expect(currentSlotMachine).toEqual(jasmine.any(Object));
         });        
     });    
 
@@ -39,6 +40,11 @@ describe('navController', function(){
             //scope.setSlotMachine(currentSlotMachine);
             expect(scope.serialNumber).toBe(100105);
         });
+        
+        it('Display the completed status of the current slot machine', function() {
+            //scope.setSlotMachine(currentSlotMachine);
+            expect(scope.completed).toBe("Incomplete");
+        });        
         /*
         xit('Display the EPROM signature of the current slot machine)', function(){
             expect(scope.EPROM).toBe("ASDF1005");

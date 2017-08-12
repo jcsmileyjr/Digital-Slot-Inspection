@@ -16,7 +16,7 @@ describe("Software Sevice", function() {
     
     describe("addSoftwareIssue()", function(){
         it('Software compliance issue saved to software tracker array when chosen by user', function(){
-            expect(tracker[0]).toEqual('EPROM Signature is Incorrect');
+            expect(tracker[0]).toEqual('EPROM Signature is Rescinded');
         });
     });
     
