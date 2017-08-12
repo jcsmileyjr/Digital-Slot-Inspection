@@ -13,24 +13,61 @@
             
             <!--Display the status of the current slot machine-->
             <h3>{{completed}}</h3>            
-        </div>        
-
-        
-        <!--Display the button navigate backwards to a previous slot machine-->
-        <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1">   
-            <button type="button" class="btn btn-sm" ng-click="previousSlotMachine()">Backward</button>    
-        </div>
-        <!--Display the button navigate forward to the next slot machine-->
-        <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1">   
-            <button type="button" class="btn btn-sm" ng-click="nextSlotMachine()">Forward</button>    
         </div>
         
-        <!--Display a input box to search for a chosen slot machine-->
-        <div class="col-xs-2 col-sm-2 col-md-4 col-lg-4 input-group"> 
-            <input type="text" ng-model="userLocation" size="6" placeholder="Search" ng-click="searchSlotMachine('1-2-2')">
-            <button type="submit" class="btn btn-sm" ng-click="searchSlotMachine(userLocation)"><i class="fa fa-search" aria-hidden="true"></i></button>            
-        </div>
-        
+        <!--Display Navigation controls-->
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <h2>Navigation Controls</h2>
+            <!--Top row containing search button-->            
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <!--search button-->                
+                 <input type="text" ng-model="userLocation" size="6" placeholder="Search">
+                    <button type="submit" class="btn btn-sm" ng-click="searchSlotMachine(userLocation)"><i class="fa fa-search" aria-hidden="true"></i></button>
+                </div>    
+            </div>
+            <!--Second row containing Next and Previous titles-->
+            <div class="row">
+                <!-- Left side column-->
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <h3>Previous</h3>
+                </div>
+                <!--center column-->
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
+                <!--right side column-->
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <h3>Next</h3>
+                </div>
+            </div>
+            <!--Third row containing Next, Open, and Previous controls--> 
+            <div class="row">
+                <!-- Left side column-->
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <button type="button" class="btn btn-sm" ng-click="previousSlotMachine()"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+                </div>
+                <!-- center column-->
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <button type="submit" class="btn btn-sm" ng-click="searchSlotMachine(userLocation)">
+                        <h3>Open</h3>
+                    </button>                     
+                </div>
+                <!-- right side column-->
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <button type="button" class="btn btn-sm" ng-click="nextSlotMachine()"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+                </div>
+            </div>
+            <!--Forth row containing Dynamic Info Box-->
+            <div class="row">
+                <!-- Left side column-->
+               <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
+                <!-- center column-->
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 well well-sm">
+                        {{status}}
+                </div>
+                <!-- right side column-->
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
+            </div>   
+        </div> 
     </div>
 </div><!--end of Navigation Section-->
 <div class="row">
