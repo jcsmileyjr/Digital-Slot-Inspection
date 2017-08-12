@@ -11,6 +11,9 @@ myApp.controller('navController', ["$scope", "SlotMachine","Compliance", "IssueC
         
         //assigns the slot machine, received as a parameter, serial number to the scope's serial number 
         $scope.serialNumber = slotMachine.serialNumber;
+        
+        //assigns the slot machine, received as a parameter, completed status to the scope's completed 
+        $scope.completed = slotMachine.completed;        
     };
     
     //use the setSlotMachine function to setup the starting slot machine location and serial number
