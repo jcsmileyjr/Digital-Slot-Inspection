@@ -37,6 +37,24 @@ myApp.config(['$stateProvider', '$urlRouterProvider',function($stateProvider, $u
             url:'/touchscreen',
             templateUrl: 'touchscreen/touchscreen.html',
             controller: "touchscreenController"
-        })    
+        })
+        //The locks state redirects the user to the locks.html template and locksController via the /locks url. 
+        .state('locks', {
+            url:'/locks',
+            templateUrl: 'locks/locks.html',
+            controller: "locksController"
+        })
+        //The reels state redirects the user to the reels.html template and reelsController via the /reels url. 
+        .state('reels', {
+            url:'/reels',
+            templateUrl: 'reels/reels.html',
+            controller: "reelsController"
+        })
+        //The software state redirects the user to the software.html template and softwareController via the /software url. 
+        .state('software', {
+            url:'/software',
+            templateUrl: 'software/software.html',
+            controller: "softwareController"
+        })     
     
 }]);

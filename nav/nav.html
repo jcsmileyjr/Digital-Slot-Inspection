@@ -36,36 +36,41 @@
         <!--Display the top row of the compliance issues buttons-->
         <div class="row">   
             <!--First column of the top row featuring the Meal Book Issues-->
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">   
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">   
                 <button type="button" class="btn btn-lg" ui-sref="mealBook">Meal Book</button>           
             </div>
             
             <!--Second column of the top row featuring the Buttons Issues-->
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">   
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">   
                 <button type="button" class="btn btn-lg" ui-sref="button">Buttons</button>           
             </div>  
             
             <!--Third column of the top row featuring the Reel Strip Issues-->
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">   
-                <button type="button" class="btn btn-lg" ng-click="reelStripPage()">Reel Strip</button>           
-            </div>              
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">   
+                <button type="button" class="btn btn-lg" ui-sref="reels">Reel Strip</button>           
+            </div>
+            <!--Forth column of the top row featuring the Software Issues-->
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">   
+                <button type="button" class="btn btn-lg" ui-sref="software">Software</button>           
+            </div>               
         </div><!--end of top row-->
         
         <!--Display the bottom row of the compliance issues buttons-->
+        <br>
         <div class="row">   
             <!--First column of the bottom row featuring the Tower Lights Issues-->
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">   
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">   
                 <button type="button" class="btn btn-lg" ui-sref="lights">Tower Lights</button>           
             </div>
             
             <!--Second column of the bottom row featuring the TouchScreen Issues-->
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">   
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">   
                 <button type="button" class="btn btn-lg" ui-sref="touchscreen">Touchscreen</button>           
             </div>  
             
             <!--Third column of the bottom row featuring the Secured Boards Issues-->
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">   
-                <button type="button" class="btn btn-lg" ng-click="securedBoardPage()">Secured CPU</button>           
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">   
+                <button type="button" class="btn btn-lg" ui-sref="locks">Secured CPU</button>           
             </div>              
         </div><!--end of lower row-->
         <h3>Total Number of Issues Found {{numberOfIssues}}</h3>
