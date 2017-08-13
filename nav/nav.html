@@ -6,13 +6,13 @@
             <h2>Current Slot Machine</h2>
             
             <!--Display the location of the current slot machine-->
-            <h3>{{location}}</h3>
+            <h4>{{location}}</h4>
             
             <!--Display the serial number of the current slot machine-->
-            <h3>{{serialNumber}}</h3>
+            <h4>{{serialNumber}}</h4>
             
             <!--Display the status of the current slot machine-->
-            <h3>{{completed}}</h3>            
+            <h4>{{completed}}</h4>            
         </div>
         
         <!--Display Navigation controls-->
@@ -30,13 +30,13 @@
             <div class="row">
                 <!-- Left side column-->
                 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                    <h3>Previous</h3>
+                    <h4>Previous</h4>
                 </div>
                 <!--center column-->
                 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
                 <!--right side column-->
                 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                    <h3>Next</h3>
+                    <h4>Next</h4>
                 </div>
             </div>
             <!--Third row containing Next, Open, and Previous controls--> 
@@ -47,8 +47,8 @@
                 </div>
                 <!-- center column-->
                 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                    <button type="submit" class="btn btn-sm" ng-click="searchSlotMachine(userLocation)">
-                        <h3>Open</h3>
+                    <button type="submit" class="btn btn-sm" ng-click="open()">
+                        <h4>Open</h4>
                     </button>                     
                 </div>
                 <!-- right side column-->
@@ -70,11 +70,8 @@
         </div> 
     </div>
 </div><!--end of Navigation Section-->
-<div class="row">
-    
-    <!--Sets the page to the size of the view-port -->
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <h3>Click a Button to Document Compliance Issues</h3>
+<div class="row" ng-show="showLowerHalf==true">
+    <h2>Click a Button to Document Compliance Issues</h2>
         <!--Display the top row of the compliance issues buttons-->
         <div class="row">   
             <!--First column of the top row featuring the Meal Book Issues-->
@@ -115,29 +112,17 @@
                 <button type="button" class="btn btn-lg" ui-sref="locks">Secured CPU</button>           
             </div>              
         </div><!--end of lower row-->
-        <h3>Total Number of Issues Found {{numberOfIssues}}</h3>
-    </div><!--end of view-port -->    
-</div><!--end of Compliance Issue Section-->
-<div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <h3>Click a button to Save and Continue</h3>
-        <div class="row">            
-
-            <!--Display the button navigate forward to the next slot machine-->
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">   
-                <button type="button" class="btn btn-md" ng-click="">Skip and Continue</button>    
-            </div>
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">      
-                <button type="button" class="btn btn-md" ng-click="saveCompleted()">Save and Continue</button>    
-            </div>
-            <!--Display the button navigate forward to the next slot machine-->
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">    
-                <button type="button" class="btn btn-md" ng-click="">Compile &amp; Export Report</button>    
-            </div>
-            <!--Display the button navigate forward to the next slot machine-->
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">   
-                <button type="button" class="btn btn-md" ng-click="nextSlotMachine()">List of Issues Found</button>    
-            </div>            
+        
+    <div class="row">
+        <!--Display the button navigate forward to the next slot machine-->
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">   
+            <button type="button" class="btn btn-md" ng-click="">Skip and Continue</button>    
         </div>
-    </div>    
-</div><!--end of Action Section-->
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">      
+            <button type="button" class="btn btn-md" ng-click="saveCompleted()">Save and Continue</button>    
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <h4>Total Number of Issues Found {{numberOfIssues}}</h4>    
+        </div>
+    </div><!--end of Action Button Row-->    
+</div><!--end of Compliance Issue Section-->

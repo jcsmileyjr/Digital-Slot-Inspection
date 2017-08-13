@@ -1,20 +1,26 @@
 myApp.controller('navController', ["$scope", "SlotMachine","Compliance", "IssueCounter",  function($scope, SlotMachine, Compliance, IssueCounter){
     
+    //function to dynamically update the slot machine status note under the "open" button in the remote. 
     $scope.setStatus = function(completed){
+        
+        //set the text for each status type
         var incompleteMesage = "NOT Been Inspected";
         var completeMessage = "Already Completed. If need to review, go to the Tools/List";
         var skipMessage = "NOT Finished and Completed.";
         
+        //if the slot machine completed property equal incomplete, then the status variable is change to the incompleteMessage. 
         if(completed == "Incomplete")
             {
                 $scope.status = incompleteMesage;
             }
         
+        //if the slot machine completed property equal complete, then the status variable is change to the completeMessage.        
         if(completed == "Completed")
             {
                 $scope.status = completeMessage;
             }
         
+        //if the slot machine completed property equal skip, then the status variable is change to the skipMessage.        
         if(completed == "Skip")
             {
                 $scope.status = skipMessage;
@@ -91,6 +97,16 @@ myApp.controller('navController', ["$scope", "SlotMachine","Compliance", "IssueC
         //function to setup the new current slot machine location and serial number
         $scope.setSlotMachine($scope.currentSlotMachine);         
         
+    }
+    
+    //function to show the lower half of app to allow user to pick a compliance issue
+    $scope.open = function(){
+        $scope.showLowerHalf = true;
+    }
+    
+    //funciton to hide/close the lower half of the app after a slot machine has been skip or saved. 
+    $scope.close = function(){
+        $scope.showLowerHalf = false; 
     }
     
 }]);

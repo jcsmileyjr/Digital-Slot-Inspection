@@ -66,5 +66,13 @@ describe('navController', function(){
         });        
     });        
 
+    describe('open()', function(){
+        beforeEach(function() {
+            scope.open();
+        });               
+        it('Sets the showLowerHalf variable to true', function() {        
+            expect(scope.showLowerHalf.toBe(true);
+        });        
+    });         
     
 }); /*End of main navController Describe block*/   
