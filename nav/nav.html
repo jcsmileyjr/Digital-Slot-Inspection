@@ -4,15 +4,26 @@
         <!--Display current slot machine Details-->
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
             <h2>Current Slot Machine</h2>
-            
-            <!--Display the location of the current slot machine-->
-            <h4>{{location}}</h4>
-            
-            <!--Display the serial number of the current slot machine-->
-            <h4>{{serialNumber}}</h4>
-            
-            <!--Display the status of the current slot machine-->
-            <h4>{{completed}}</h4>            
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                {{location}}
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">  
+                <i class="fa fa-question" aria-hidden="true"></i>
+            </div>
+            <br>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                {{serialNumber}}
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">  
+                <i class="fa fa-question" aria-hidden="true"></i>
+            </div>
+            <br>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                {{completed}}
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">  
+                <i class="fa fa-question" aria-hidden="true"></i>
+            </div>               
         </div>
         
         <!--Display Navigation controls-->
@@ -116,10 +127,14 @@
     <div class="row">
         <!--Display the button navigate forward to the next slot machine-->
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">   
-            <button type="button" class="btn btn-md" ng-click="">Skip and Continue</button>    
+            <button type="button" class="btn btn-md" ng-click="">Skip and Continue</button>
+            <br>
+            <i class="fa fa-question" aria-hidden="true"></i>
         </div>
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">      
-            <button type="button" class="btn btn-md" ng-click="saveCompleted()">Save and Continue</button>    
+            <button type="button" class="btn btn-md" ng-click="saveCompleted()">Save and Continue</button>
+            <br>
+            <i class="fa fa-question" aria-hidden="true"></i>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <h4>Total Number of Issues Found {{numberOfIssues}}</h4>    
