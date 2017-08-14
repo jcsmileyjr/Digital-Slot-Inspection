@@ -5,7 +5,7 @@ myApp.controller('navController', ["$scope", "SlotMachine","Compliance", "IssueC
         
         //set the text for each status type
         var incompleteMesage = "NOT Been Inspected";
-        var completeMessage = "Already Completed. If need to review, go to the Tools/List";
+        var completeMessage = "Already Completed. Click the Tools icon to review";
         var skipMessage = "NOT Finished and Completed.";
         
         //if the slot machine completed property equal incomplete, then the status variable is change to the incompleteMessage. 
