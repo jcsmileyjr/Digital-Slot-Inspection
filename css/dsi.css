@@ -1,3 +1,5 @@
+/*Possible style colors #0059B2, #CACAB6, #CACACA or #f2f2ed, #7BAD09, #46B709, #86F993, #5DAD66, #ffff4c, #BF0000 */
+
 /* right side align */
 .rightAlign {
     text-align: right;   
@@ -13,43 +15,50 @@
     text-align: center;
 }
 
-/*Navigation/Top half section background and text color #0059B2, #CACAB6, #CACACA or #f2f2ed, #7BAD09, #46B709, #86F993, #5DAD66, #ffff4c, #BF0000 */
+/*Navigation/Top half section background and text color  */
 .navSection {
     background-color: #0059B2;
     color: #CACACA;
     font-size: 110%
 }
 
+/*css style for the compliance topic section*/
 .complianceSection{
     background-color: #CACACA;
     color: #0059B2;
 }
 
+/*css style for compliance buttons*/
 .complianceButtons {
     background-color: #0059B2;
     color: #CACACA;
 }
 
+/*css style for skip action buttons*/
 .yellow {
     background-color: #FFEF7F;
     color: navy;
     font-weight: bolder;
 }
 
+/*css style for complete action buttons*/
 .green {
     background-color: #5DAD66;
     color: navy;
     font-weight: bolder;
 }
 
+/*pale red color for incomplete status*/
 .incompleteColor {
     color: orangered;
 }
 
+/*pale green color for complete status*/
 .completeColor {
     color: #5DAD66;
 }
 
+/*pale yellow color for skip status*/
 .skipColor {
     color:#FFEF7F;
 }
@@ -61,12 +70,11 @@
  border-radius: 50%;
 }
 
-/*navigation buttons size and text color
-.navButtonSize {
-    font-size: 300%;
-    color: navy;
+/*navigation buttons size and text color */
+.complianceChkboxSize {
+    font-size: 200%;
 }
-*/
+
 
 /*chang color of search icon*/
 .searchIcon {
@@ -77,13 +85,13 @@
 .blue {
     color: navy;
 }
-
-/*for a sticky footer you need this html, body, and footer sections*/
-html {
-  position: relative;
-  min-height: 100vh;
-    bottom: 0;
+/*increase the size of the checkbox. got tip from https://www.sitepoint.com/community/t/how-to-increase-the-checkbox-size/7856/2 */
+input[type='checkbox'] {
+    width: 4%;
+    height: 4%;
 }
+
+
 
 
 
