@@ -22,8 +22,11 @@
                 <i class="fa fa-question" aria-hidden="true"></i>
             </div>
             <br>
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" ng-class="{'incompleteColor':incompleteIcon, 'completeColor': completeIcon, 'skipColor': skipIcon}">
                 {{completed}}
+                <span ng-show="incompleteIcon"><i class="fa fa-ban incompleteColor" aria-hidden="true"></i></span>
+                <span ng-show="completeIcon"><i class="fa fa-check completeColor" aria-hidden="true"></i></span>
+                <span ng-show="skipIcon"><i class="fa fa-exclamation skipColor" aria-hidden="true"></i></span>                
             </div>
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 leftAlign">  
                 <i class="fa fa-question" aria-hidden="true"></i>
@@ -82,7 +85,7 @@
                 <!-- Left side column-->
                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></div>
                 <!-- center column-->
-                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 centerAlign">              
+                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 centerAlign " ng-class="{'incompleteColor':incompleteIcon, 'completeColor': completeIcon, 'skipColor': skipIcon}">              
                         {{status}}
                 </div>
                 <!-- right side column-->

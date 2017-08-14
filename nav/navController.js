@@ -1,6 +1,6 @@
 myApp.controller('navController', ["$scope", "SlotMachine","Compliance", "IssueCounter",  function($scope, SlotMachine, Compliance, IssueCounter){
     
-    //function to dynamically update the slot machine status note under the "open" button in the remote. 
+    //function to dynamically update the slot machine status note under the "open" button in the remote and the icon inside the slot machine details. 
     $scope.setStatus = function(completed){
         
         //set the text for each status type
@@ -12,18 +12,27 @@ myApp.controller('navController', ["$scope", "SlotMachine","Compliance", "IssueC
         if(completed == "Incomplete")
             {
                 $scope.status = incompleteMesage;
+                $scope.incompleteIcon = true;
+                $scope.completeIcon = false;
+                $scope.skipIcon = false;
             }
         
         //if the slot machine completed property equal complete, then the status variable is change to the completeMessage.        
         if(completed == "Completed")
             {
                 $scope.status = completeMessage;
+                $scope.completeIcon = true;
+                $scope.incompleteIcon = false;
+                $scope.skipIcon = false;                
             }
         
         //if the slot machine completed property equal skip, then the status variable is change to the skipMessage.        
         if(completed == "Skip")
             {
                 $scope.status = skipMessage;
+                $scope.skipIcon = true;
+                $scope.completeIcon = false;
+                $scope.incompleteIcon = false;                
             }
     }//End of setStatus method    
     

@@ -13,7 +13,7 @@
     text-align: center;
 }
 
-/*Navigation/Top half section background and text color #0059B2, #CACAB6, #CACACA or #f2f2ed, #7BAD09, #46B709, #86F993, #5DAD66, #ffff4c */
+/*Navigation/Top half section background and text color #0059B2, #CACAB6, #CACACA or #f2f2ed, #7BAD09, #46B709, #86F993, #5DAD66, #ffff4c, #BF0000 */
 .navSection {
     background-color: #0059B2;
     color: #CACACA;
@@ -41,6 +41,20 @@
     color: navy;
     font-weight: bolder;
 }
+
+.incompleteColor {
+    color: orangered;
+}
+
+.completeColor {
+    color: #5DAD66;
+}
+
+.skipColor {
+    color:#FFEF7F;
+}
+
+
 
 /*transform navigation open button into a circle*/
 .btn-circle {
