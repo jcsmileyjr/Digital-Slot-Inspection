@@ -1,4 +1,4 @@
-<div class="row" ng-controller="reelsController">
+<div class="row navSection" ng-controller="reelsController">
     
     <!--Sets the page to the size of the view-port -->
     <!--Left-side view-port -->
@@ -19,11 +19,11 @@
                 <h1>Reels Compliance Issues</h1>
             </div>
         </div>
-        <div class="row" ng-repeat="issues in reels">
+        <div class="row complianceChkboxSize" ng-repeat="issues in reels">
             <input type="checkbox" ng-model="issues.found" ng-change="checked($index)">{{issues.issue}}
         </div>
         <br>
-        <div class="row"><button type="button" class="btn btn-lg" ui-sref="nav">Done</button></div>
+        <div class="row centerAlign"><button type="button" class="btn btn-lg green" ui-sref="nav">Done</button></div>
         
     </div><!--end of inner view-port -->
     
