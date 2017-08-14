@@ -57,7 +57,6 @@ myApp.controller('navController', ["$scope", "SlotMachine","Compliance", "IssueC
     //use the setSlotMachine function to setup the starting slot machine location and serial number
     $scope.setSlotMachine($scope.currentSlotMachine);
     
-
     
     //function use by the navigation "Backward" button to move the slot machine location backward
     $scope.previousSlotMachine = function(){
@@ -86,28 +85,6 @@ myApp.controller('navController', ["$scope", "SlotMachine","Compliance", "IssueC
         
     };
     
-    //display the total number of compliance issues found from IssueCounter issueCounter object
-    $scope.numberOfIssues = IssueCounter.getCurrentCount();    
-    
-    //function to save all of the compliance issues found with a slot machine and move to the next slot machine
-    $scope.saveCompleted = function(){
-        
-        //save the  current slot machine details and compliance issues found
-        Compliance.completed();
-                
-        //reset all compliance issue trackers
-        Compliance.resetAllComplianceTrackers();
-                
-        //use the SlotMachine service to get the slot machine after the current location to setup a new currentSlotMachine
-        $scope.currentSlotMachine = SlotMachine.getNextSlotMachine();
-        
-        $scope.numberOfIssues = IssueCounter.getCurrentCount();
-            
-        //function to setup the new current slot machine location and serial number
-        $scope.setSlotMachine($scope.currentSlotMachine);         
-        
-    }
-    
     //at start of app, the lowerhalf (compliance section) is hidden
     $scope.showLowerHalf = ComplianceSection.getShowLowerHalf();
     
@@ -122,7 +99,55 @@ myApp.controller('navController', ["$scope", "SlotMachine","Compliance", "IssueC
     
     //funciton to hide/close the lower half of the app after a slot machine has been skip or saved. 
     $scope.close = function(){
-        $scope.showLowerHalf = false; 
+        //Use service to set the showLowerHalf to false
+        ComplianceSection.closeLowerHalf()
+        
+        //gets the value of showLowerHalf
+        $scope.showLowerHalf = ComplianceSection.getShowLowerHalf();        
+    }    
+    
+    //display the total number of compliance issues found from IssueCounter issueCounter object
+    $scope.numberOfIssues = IssueCounter.getCurrentCount();    
+    
+    //function to save all of the compliance issues found with a slot machine, mark as complted, and move to the next slot machine
+    $scope.saveCompleted = function(){
+        
+        //save the  current slot machine details and compliance issues found
+        Compliance.completed();
+                
+        //reset all compliance issue trackers
+        Compliance.resetAllComplianceTrackers();
+        
+        $scope.numberOfIssues = IssueCounter.getCurrentCount();
+
+                        
+        //use the SlotMachine service to get the slot machine after the current location to setup a new currentSlotMachine
+        $scope.currentSlotMachine = SlotMachine.getNextSlotMachine();
+        
+        //function to setup the new current slot machine location and serial number
+        $scope.setSlotMachine($scope.currentSlotMachine);         
+        //close the lower half of the app
+        $scope.close();
     }
     
+    //function to save all of the compliance issues found with a slot machine, marked as skip, and move to the next slot machine
+    $scope.skip = function(){
+        
+        //save the  current slot machine details and compliance issues found
+        Compliance.skipCompleted()
+                
+        //reset all compliance issue trackers
+        Compliance.resetAllComplianceTrackers();
+        
+        $scope.numberOfIssues = IssueCounter.getCurrentCount();
+
+                        
+        //use the SlotMachine service to get the slot machine after the current location to setup a new currentSlotMachine
+        $scope.currentSlotMachine = SlotMachine.getNextSlotMachine();
+        
+        //function to setup the new current slot machine location and serial number
+        $scope.setSlotMachine($scope.currentSlotMachine);         
+        //close the lower half of the app
+        $scope.close();
+    }    
 }]);
