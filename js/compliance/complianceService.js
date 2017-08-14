@@ -26,6 +26,9 @@ myApp.factory('Compliance', ["SlotMachine", "IssueCounter", "MealBook","Button",
            //add to the array the current slot machine identifer and compliance issues
            compliance.push({"serialNumber":currentSlotMachine.serialNumber, "numberOfIssues":numberOfIssues, "completed": "Completed", "mealBook": mealBook, "button":button, "lights": lights, "touchscreen":touchscreen, "locks": locks, "reels":reels, "software": software});
            
+           //update the current slot machine completed property           
+           SlotMachine.updateSlotMachineCompleted();
+           
 	   },//end of completed function
         
         //function to saved slot machine object with compliance issues, but NOT marked as completed        
@@ -47,7 +50,10 @@ myApp.factory('Compliance', ["SlotMachine", "IssueCounter", "MealBook","Button",
            var software = Software.getSoftwareTracker();
 
            //add to the array the current slot machine identifer and compliance issues
-           compliance.push({"serialNumber":currentSlotMachine.serialNumber, "numberOfIssues":numberOfIssues, "completed": "Skip", "mealBook": mealBook, "button":button, "lights": lights, "touchscreen":touchscreen, "locks": locks, "reels":reels, "software": software});       
+           compliance.push({"serialNumber":currentSlotMachine.serialNumber, "numberOfIssues":numberOfIssues, "completed": "Skip", "mealBook": mealBook, "button":button, "lights": lights, "touchscreen":touchscreen, "locks": locks, "reels":reels, "software": software}); 
+            
+           //update the current slot machine completed property           
+           SlotMachine.updateSlotMachineSkip();            
         }, 
         
         //return the compliance array of objects

@@ -17,6 +17,20 @@ describe("Slot Machine Sevice: currentLocation object", function() {
         currentSlotMachine = SlotMachine.getCurrentSlotMachine();
     });
     
+    describe("updateSlotMachineCompleted()", function(){
+        it('Change the current slot machine completed property from incomplete to Completed', function(){
+            SlotMachine.updateSlotMachineCompleted();
+            expect(currentSlotMachine.completed).toEqual('Completed');
+        });
+    });
+    
+    describe("updateSlotMachineSkip()", function(){
+        it('Change the current slot machine completed property from incomplete to Skip', function(){
+            SlotMachine.updateSlotMachineSkip();
+            expect(currentSlotMachine.completed).toEqual('Skip');
+        });
+    });    
+    
     describe("getNextSlotMachine()", function(){
         it('Change from the current slot machine location (slotMachines[4]) to the next location (slotMachines[5])', function(){
             currentSlotMachine = SlotMachine.getNextSlotMachine();
@@ -38,7 +52,7 @@ describe("Slot Machine Sevice: currentLocation object", function() {
         });    
     
     
-        xit('Return a fail message when the user search for an invalid location )', function(){
+        it('Return a fail message when the user search for an invalid location )', function(){
             /*
             var searchMessage = 'Invalid Location, please try again with correct format/location';
             currentSlotMachine = SlotMachine.getSearchSlotMachine('2-2-4');
@@ -67,9 +81,9 @@ describe("Slot Machine Sevice: currentLocation object", function() {
         expect(currentSlotMachine.location).toEqual('1-2-5');
     });        
         
-    xit('currentLocatoin to be a number', function(){      
+    it('currentLocatoin to be a number', function(){      
     });
         
-    });/*jEnd of "Bugs found during Navigation describe block"*/
+    });/*End of "Bugs found during Navigation describe block"*/
      
 });/*End of Slot Machine service Describe block*/

@@ -19,7 +19,7 @@
                 <h1>Locks Compliance Issues</h1>
             </div>
         </div>
-        <div class="row complianceChkboxSize" ng-repeat="issues in locks">
+        <div class="row complianceChkboxSize" ng-repeat="issues in locks"  ng-class="{'completeColor':issues.found}">
             <input type="checkbox" ng-model="issues.found" ng-change="checked($index)">{{issues.issue}}
         </div>
         <br>

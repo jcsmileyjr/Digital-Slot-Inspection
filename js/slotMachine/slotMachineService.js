@@ -76,7 +76,17 @@ myApp.factory('SlotMachine', function(){
         /*return the total count of the slot machines*/
         getTotalCountOfSlotMachines: function(){
             return slotMachines.length;
-        }
+        },
+        
+        /*update the current slot machine completed property to completed*/
+        updateSlotMachineCompleted: function(){
+            slotMachines[currentLocation.location].completed = "Completed";
+        },
+        
+        /*update the current slot machine completed property to skip*/
+        updateSlotMachineSkip: function(){
+            slotMachines[currentLocation.location].completed = "Skip";
+        }        
         
     }/*End of main Return*/
     
