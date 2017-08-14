@@ -45,7 +45,7 @@ describe("Compliance Sevice:", function() {
         });
         
         it('Mark a saved completed slot machine as completed', function(){
-            expect(completedArray[0].completed).toEqual(true);
+            expect(completedArray[0].completed).toEqual("Completed");
         });        
     });
     
@@ -80,32 +80,7 @@ describe("Compliance Sevice:", function() {
         it('Mark a saved completed slot machine as Not completed', function(){
             expect(skipArray[0].completed).not.toEqual(true);
         });        
-    });    
-    
-    describe("compliantCompleted())", function(){
-        
-        // setup the issue counter object from the IssueCounter service to test..
-        beforeEach(function() {
-            //add a issue to the MealBook tracker array
-            MealBook.addMealBookIssue(0);
-            
-            //Increase the IssueCounter count object
-            IssueCounter.addToCount();
-            IssueCounter.addToCount();
-            
-            //Called the completed function and place the array of completed slot machine objects into the variable
-            Compliance.compliantCompleted();
-            compliantArray = Compliance.getCompliance();
-        }); 
-        
-        it('saved a completed slot machine as an array', function(){
-            expect(compliantArray).toEqual(jasmine.any(Object));
-        });
-        
-        it('Mark a saved completed slot machine as completed', function(){
-            expect(compliantArray[0].completed).toEqual(true);
-        });        
-    });      
+    }); 
     
 
      

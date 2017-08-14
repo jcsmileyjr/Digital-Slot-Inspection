@@ -1,0 +1,90 @@
+/* right side align */
+.rightAlign {
+    text-align: right;   
+}
+
+/* left side align */
+.leftAlign {
+    text-align:left;   
+}
+
+/* center alignment*/
+.centerAlign {
+    text-align: center;
+}
+
+/*Navigation/Top half section background and text color #0059B2, #CACAB6, #CACACA or #f2f2ed, #7BAD09, #46B709, #86F993, #5DAD66, #ffff4c, #BF0000 */
+.navSection {
+    background-color: #0059B2;
+    color: #CACACA;
+    font-size: 110%
+}
+
+.complianceSection{
+    background-color: #CACACA;
+    color: #0059B2;
+}
+
+.complianceButtons {
+    background-color: #0059B2;
+    color: #CACACA;
+}
+
+.yellow {
+    background-color: #FFEF7F;
+    color: navy;
+    font-weight: bolder;
+}
+
+.green {
+    background-color: #5DAD66;
+    color: navy;
+    font-weight: bolder;
+}
+
+.incompleteColor {
+    color: orangered;
+}
+
+.completeColor {
+    color: #5DAD66;
+}
+
+.skipColor {
+    color:#FFEF7F;
+}
+
+
+
+/*transform navigation open button into a circle*/
+.btn-circle {
+ border-radius: 50%;
+}
+
+/*navigation buttons size and text color
+.navButtonSize {
+    font-size: 300%;
+    color: navy;
+}
+*/
+
+/*chang color of search icon*/
+.searchIcon {
+    color: navy;
+}
+
+/*change text color to blue*/
+.blue {
+    color: navy;
+}
+
+/*for a sticky footer you need this html, body, and footer sections*/
+html {
+  position: relative;
+  min-height: 100vh;
+    bottom: 0;
+}
+
+
+
+

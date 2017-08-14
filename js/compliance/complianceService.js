@@ -24,7 +24,7 @@ myApp.factory('Compliance', ["SlotMachine", "IssueCounter", "MealBook","Button",
            var software = Software.getSoftwareTracker();
 
            //add to the array the current slot machine identifer and compliance issues
-           compliance.push({"serialNumber":currentSlotMachine.serialNumber, "numberOfIssues":numberOfIssues, "completed": true, "mealBook": mealBook, "button":button, "lights": lights, "touchscreen":touchscreen, "locks": locks, "reels":reels, "software": software});
+           compliance.push({"serialNumber":currentSlotMachine.serialNumber, "numberOfIssues":numberOfIssues, "completed": "Completed", "mealBook": mealBook, "button":button, "lights": lights, "touchscreen":touchscreen, "locks": locks, "reels":reels, "software": software});
            
 	   },//end of completed function
         
@@ -47,7 +47,7 @@ myApp.factory('Compliance', ["SlotMachine", "IssueCounter", "MealBook","Button",
            var software = Software.getSoftwareTracker();
 
            //add to the array the current slot machine identifer and compliance issues
-           compliance.push({"serialNumber":currentSlotMachine.serialNumber, "numberOfIssues":numberOfIssues, "completed": false, "mealBook": mealBook, "button":button, "lights": lights, "touchscreen":touchscreen, "locks": locks, "reels":reels, "software": software});       
+           compliance.push({"serialNumber":currentSlotMachine.serialNumber, "numberOfIssues":numberOfIssues, "completed": "Skip", "mealBook": mealBook, "button":button, "lights": lights, "touchscreen":touchscreen, "locks": locks, "reels":reels, "software": software});       
         }, 
         
         //return the compliance array of objects

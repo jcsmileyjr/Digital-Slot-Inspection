@@ -1,5 +1,41 @@
 myApp.controller('navController', ["$scope", "SlotMachine","Compliance", "IssueCounter",  function($scope, SlotMachine, Compliance, IssueCounter){
     
+    //function to dynamically update the slot machine status note under the "open" button in the remote and the icon inside the slot machine details. 
+    $scope.setStatus = function(completed){
+        
+        //set the text for each status type
+        var incompleteMesage = "NOT Been Inspected";
+        var completeMessage = "Already Completed. Click the Tools icon to review";
+        var skipMessage = "NOT Finished and Completed.";
+        
+        //if the slot machine completed property equal incomplete, then the status variable is change to the incompleteMessage. 
+        if(completed == "Incomplete")
+            {
+                $scope.status = incompleteMesage;
+                $scope.incompleteIcon = true;
+                $scope.completeIcon = false;
+                $scope.skipIcon = false;
+            }
+        
+        //if the slot machine completed property equal complete, then the status variable is change to the completeMessage.        
+        if(completed == "Completed")
+            {
+                $scope.status = completeMessage;
+                $scope.completeIcon = true;
+                $scope.incompleteIcon = false;
+                $scope.skipIcon = false;                
+            }
+        
+        //if the slot machine completed property equal skip, then the status variable is change to the skipMessage.        
+        if(completed == "Skip")
+            {
+                $scope.status = skipMessage;
+                $scope.skipIcon = true;
+                $scope.completeIcon = false;
+                $scope.incompleteIcon = false;                
+            }
+    }//End of setStatus method    
+    
     //use the SlotMachine service to get the slot machine at the current location to setup a new currentSlotMachine    
     $scope.currentSlotMachine = SlotMachine.getCurrentSlotMachine();
     
@@ -11,10 +47,17 @@ myApp.controller('navController', ["$scope", "SlotMachine","Compliance", "IssueC
         
         //assigns the slot machine, received as a parameter, serial number to the scope's serial number 
         $scope.serialNumber = slotMachine.serialNumber;
+        
+        //assigns the slot machine, received as a parameter, completed status to the scope's completed 
+        $scope.completed = slotMachine.completed;
+        
+        $scope.setStatus($scope.completed);
     };
     
     //use the setSlotMachine function to setup the starting slot machine location and serial number
-    $scope.setSlotMachine($scope.currentSlotMachine);    
+    $scope.setSlotMachine($scope.currentSlotMachine);
+    
+
     
     //function use by the navigation "Backward" button to move the slot machine location backward
     $scope.previousSlotMachine = function(){
@@ -63,6 +106,16 @@ myApp.controller('navController', ["$scope", "SlotMachine","Compliance", "IssueC
         //function to setup the new current slot machine location and serial number
         $scope.setSlotMachine($scope.currentSlotMachine);         
         
+    }
+    
+    //function to show the lower half of app to allow user to pick a compliance issue
+    $scope.open = function(){
+        $scope.showLowerHalf = true;
+    }
+    
+    //funciton to hide/close the lower half of the app after a slot machine has been skip or saved. 
+    $scope.close = function(){
+        $scope.showLowerHalf = false; 
     }
     
 }]);

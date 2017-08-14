@@ -2,7 +2,7 @@
 myApp.factory('Software', function () {
 
     /*array of Software compliance variables used to tracked which compliance variable was found*/
-    var software = [{"issue":"EPROM Signature is Incorrect", "found":false}, {"issue":"Hold Percentage is Incorrect", "found":false}];
+    var software = [{"issue":"EPROM Signature is Rescinded", "found":false}, {"issue":"EPROM Signature is Wrong/Incorrect", "found":false}, {"issue":"Hold Percentage is Incorrect", "found":false}];
     
     //array used to tracked found Software compliance issues
     var softwareTracker= [];
