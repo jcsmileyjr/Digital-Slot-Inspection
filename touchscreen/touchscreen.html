@@ -19,7 +19,8 @@
                 <h1>Touchscreen Compliance Issues</h1>
             </div>
         </div>
-        <div class="row complianceChkboxSize" ng-repeat="issues in touchscreen">
+        <br>
+        <div class="row complianceChkboxSize" ng-repeat="issues in touchscreen"  ng-class="{'completeColor':issues.found}">
             <input type="checkbox" ng-model="issues.found" ng-change="checked($index)">{{issues.issue}}
         </div>
         <br>
