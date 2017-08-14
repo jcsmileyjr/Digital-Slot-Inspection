@@ -1,4 +1,4 @@
-myApp.controller('navController', ["$scope", "SlotMachine","Compliance", "IssueCounter",  function($scope, SlotMachine, Compliance, IssueCounter){
+myApp.controller('navController', ["$scope", "SlotMachine","Compliance", "IssueCounter","ComplianceSection",  function($scope, SlotMachine, Compliance, IssueCounter, ComplianceSection){
     
     //function to dynamically update the slot machine status note under the "open" button in the remote and the icon inside the slot machine details. 
     $scope.setStatus = function(completed){
@@ -108,9 +108,16 @@ myApp.controller('navController', ["$scope", "SlotMachine","Compliance", "IssueC
         
     }
     
+    //at start of app, the lowerhalf (compliance section) is hidden
+    $scope.showLowerHalf = ComplianceSection.getShowLowerHalf();
+    
     //function to show the lower half of app to allow user to pick a compliance issue
     $scope.open = function(){
-        $scope.showLowerHalf = true;
+        //Use service to set the showLowerHalf to true
+        ComplianceSection.openLowerHalf();
+        
+        //gets the value of showLowerHalf
+        $scope.showLowerHalf = ComplianceSection.getShowLowerHalf();
     }
     
     //funciton to hide/close the lower half of the app after a slot machine has been skip or saved. 
