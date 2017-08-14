@@ -33,10 +33,4 @@ myApp.controller('softwareController',  function($scope, $state, Software, Issue
             $scope.removeSoftwareIssue(number)
         }
     }
-    
-    //redirect to nav.html
-    $scope.confirm = function(){
-        $state.go('nav');
-    };
-    
 });//end of the softwareController Service
