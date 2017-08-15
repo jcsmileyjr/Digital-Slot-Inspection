@@ -26,7 +26,12 @@ myApp.factory('IssueCounter', function () {
         //reset the issueCounter
         resetCount: function(){
             issueCounter.count = 0;    
-        }   
+        },
+        
+        //update the current count
+        updateCount: function(oldCount){
+            issueCounter.count = oldCount;
+        }
         
     }/*End of main Return*/
     

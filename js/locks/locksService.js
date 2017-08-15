@@ -48,6 +48,17 @@ myApp.factory('Locks', function () {
             for(var i=0;i<locks.length;i++){
                 locks[i].found = false;
             }
+        },
+        
+        //Loop through each element in the locks array. Loop through each element in the tracker array.  If the current tracker element issue mactches the current locks issue, then that issue.found property will be update to true. 
+        updateLocksTracker(tracker){
+            for(var i=0;i<locks.length;i++){
+                for(var j=0;j<tracker.length;j++){
+                    if(tracker[j]==locks[i].issue){
+                        locks[i].found = true;
+                    }//end of if statement
+                }// end of j-for looop
+            }// end of i-for loop
         }
         
     }/*End of main Return*/

@@ -48,6 +48,17 @@ myApp.factory('Touchscreen', function () {
             for(var i=0;i<touchscreen.length;i++){
                 touchscreen[i].found = false;
             }
+        },
+        
+        //Loop through each element in the touchscreen array. Loop through each element in the tracker array.  If the current tracker element issue mactches the current touchscreen issue, then that issue.found property will be update to true. 
+        updateTouchscreenTracker(tracker){
+            for(var i=0;i<touchscreen.length;i++){
+                for(var j=0;j<tracker.length;j++){
+                    if(tracker[j]==touchscreen[i].issue){
+                        touchscreen[i].found = true;
+                    }//end of if statement
+                }// end of j-for looop
+            }// end of i-for loop
         }
         
     }/*End of main Return*/

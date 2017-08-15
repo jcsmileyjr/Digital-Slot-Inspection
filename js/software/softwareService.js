@@ -48,6 +48,17 @@ myApp.factory('Software', function () {
             for(var i=0;i<software.length;i++){
                 software[i].found = false;
             }
+        },
+        
+        //Loop through each element in the software array. Loop through each element in the tracker array.  If the current tracker element issue mactches the current software issue, then that issue.found property will be update to true. 
+        updateSoftwareTracker(tracker){
+            for(var i=0;i<software.length;i++){
+                for(var j=0;j<tracker.length;j++){
+                    if(tracker[j]==software[i].issue){
+                        software[i].found = true;
+                    }//end of if statement
+                }// end of j-for looop
+            }// end of i-for loop
         }
         
     }/*End of main Return*/
