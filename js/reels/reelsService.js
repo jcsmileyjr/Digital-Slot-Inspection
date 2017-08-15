@@ -48,6 +48,17 @@ myApp.factory('Reels', function () {
             for(var i=0;i<reels.length;i++){
                 reels[i].found = false;
             }
+        },
+        
+        //Loop through each element in the reels array. Loop through each element in the tracker array.  If the current tracker element issue mactches the current reels issue, then that issue.found property will be update to true. 
+        updateReelsTracker(tracker){
+            for(var i=0;i<reels.length;i++){
+                for(var j=0;j<tracker.length;j++){
+                    if(tracker[j]==reels[i].issue){
+                        reels[i].found = true;
+                    }//end of if statement
+                }// end of j-for looop
+            }// end of i-for loop
         }
         
     }/*End of main Return*/

@@ -48,6 +48,17 @@ myApp.factory('MealBook', function () {
             for(var i=0;i<mealBook.length;i++){
                 mealBook[i].found = false;
             }
+        },
+        
+        //Loop through each element in the mealBook array. Loop through each element in the tracker array.  If the current tracker element issue mactches the current mealBook issue, then that issue.found property will be update to true. 
+        updateMealBookTracker(tracker){
+            for(var i=0;i<mealBook.length;i++){
+                for(var j=0;j<tracker.length;j++){
+                    if(tracker[j]==mealBook[i].issue){
+                        mealBook[i].found = true;
+                    }//end of if statement
+                }// end of j-for looop
+            }// end of i-for loop
         }
         
     }/*End of main Return*/

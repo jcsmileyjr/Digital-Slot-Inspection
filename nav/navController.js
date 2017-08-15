@@ -65,6 +65,12 @@ myApp.controller('navController', ["$scope", "SlotMachine","Compliance", "IssueC
         
         //function to setup the new current slot machine location and serial number
         $scope.setSlotMachine($scope.currentSlotMachine);  
+        
+        //Hides//close teh compliance section if the user navigate away
+        if($scope.showLowerHalf = true){
+            ComplianceSection.closeLowerHalf()
+            $scope.showLowerHalf = ComplianceSection.getShowLowerHalf();
+        }        
     };
     
     //function use by the navigation "Forward" button to move the slot machine location forward
@@ -72,7 +78,13 @@ myApp.controller('navController', ["$scope", "SlotMachine","Compliance", "IssueC
         //use the SlotMachine service to get the slot machine after the current location to setup a new currentSlotMachine
         $scope.currentSlotMachine = SlotMachine.getNextSlotMachine();
         //function to setup the new current slot machine location and serial number
-        $scope.setSlotMachine($scope.currentSlotMachine);  
+        $scope.setSlotMachine($scope.currentSlotMachine);
+        
+        //Hides//close teh compliance section if the user navigate away
+        if($scope.showLowerHalf = true){
+            ComplianceSection.closeLowerHalf()
+            $scope.showLowerHalf = ComplianceSection.getShowLowerHalf();
+        }
     };
     
     //function use by the nav "Search" button to move the slot machine location the user chosen  location
@@ -82,6 +94,12 @@ myApp.controller('navController', ["$scope", "SlotMachine","Compliance", "IssueC
         $scope.currentSlotMachine = SlotMachine.getSearchSlotMachine(userLocation);      
         //function to setup the new current slot machine location and serial number
         $scope.setSlotMachine($scope.currentSlotMachine);
+        
+        //Hides//close teh compliance section if the user navigate away
+        if($scope.showLowerHalf = true){
+            ComplianceSection.closeLowerHalf()
+            $scope.showLowerHalf = ComplianceSection.getShowLowerHalf();
+        }        
         
     };
     
@@ -95,6 +113,14 @@ myApp.controller('navController', ["$scope", "SlotMachine","Compliance", "IssueC
         
         //gets the value of showLowerHalf
         $scope.showLowerHalf = ComplianceSection.getShowLowerHalf();
+        
+        //reinitize all the compliance issue trackers and numberOfissues for the current slot machine if the status is Skip
+        if($scope.completed=="Skip")
+        {
+            Compliance.reopenSkipSlotMachine();
+            $scope.numberOfIssues = IssueCounter.getCurrentCount();            
+        }
+        
     }
     
     //funciton to hide/close the lower half of the app after a slot machine has been skip or saved. 

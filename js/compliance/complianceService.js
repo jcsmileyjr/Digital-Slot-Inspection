@@ -54,7 +54,30 @@ myApp.factory('Compliance', ["SlotMachine", "IssueCounter", "MealBook","Button",
             
            //update the current slot machine completed property           
            SlotMachine.updateSlotMachineSkip();            
-        }, 
+        },
+        
+        reopenSkipSlotMachine: function(){
+            
+            //current slot machine serial number
+            var currentSlotMachine = SlotMachine.getCurrentSlotMachine();
+            
+            //search compliance array for skip slot machine based on serialNumber. if you find it then update all trackers and numberOfIssues.
+            //Some type of glich is causeing Reels and Locsk updateTrackers to cross but it works. 
+            for(var i=0;i<compliance.length;i++)
+                {
+                    if(currentSlotMachine.serialNumber = compliance[i].serialNumber)
+                        {
+                            IssueCounter.updateCount(compliance[i].numberOfIssues);
+                            MealBook.updateMealBookTracker(compliance[i].mealBook);
+                            Button.updateButtonTracker(compliance[i].button);
+                            Lights.updateLightsTracker(compliance[i].lights);
+                            Touchscreen.updateTouchscreenTracker(compliance[i].touchscreen);
+                            Reels.updateLocksTracker(compliance[i].reels);
+                            Locks.updateReelsTracker(compliance[i].locks);
+                            Software.updateSoftwareTracker(compliance[i].software);
+                        }
+                }
+        },
         
         //return the compliance array of objects
         getCompliance: function(){
