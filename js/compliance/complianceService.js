@@ -56,6 +56,13 @@ myApp.factory('Compliance', ["SlotMachine", "IssueCounter", "MealBook","Button",
            SlotMachine.updateSlotMachineSkip();            
         },
         
+        //create a list of compliance issues to show in the list.html
+        complianceList: function(){
+            
+            
+            
+        },
+        
         reopenSkipSlotMachine: function(){
             
             //current slot machine serial number

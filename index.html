@@ -27,6 +27,10 @@
 <!--Nav files -->    
 <script src="nav/nav.html"></script>
 <script src="nav/navController.js"></script>
+    
+<!-- list files -->    
+<script src="toolbar/list.html"></script>
+<script src="toolbar/listController.js"></script>    
 
 
 <!--Meal Book files -->    
@@ -76,7 +80,10 @@
                     Digital Slot Inspection 
             </div>        
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 rightAlign">
-                <span class="fa fa-cog" aria-hidden="true"></span> 
+                <!--
+                <span class="fa fa-cog" aria-hidden="true" ui-sref="list"></span> 
+                -->
+                <a ui-sref="list">List of Found Compliance Issues</a>
             </div>
         </div>    
     </div><!--end of row that contains the body -->

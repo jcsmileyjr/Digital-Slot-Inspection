@@ -91,6 +91,24 @@ input[type='checkbox'] {
     height: 4%;
 }
 
+/*disable the navigation Div*/
+/*tips from https://scotch.io/tutorials/the-many-ways-to-use-ngclass*/
+/*answer at https://stackoverflow.com/questions/25561144/disabling-an-entire-div-in-angularjs*/
+.is-disabled {
+    
+    opacity: .3; /*affects the transpancy. 0 is ghost, .5 is halfway, 1 is good*/
+    pointer-events: none;/*can not use mouse click*/
+}
+
+/*alternate background color between shades (B8E5E5) of light blue for user data  */
+.alternatingRows:nth-child(even) {
+  background-color: #007FFE ;
+} 
+
+/* unvisited link */
+a {
+    color: #CACACA;
+}
 
 
 
