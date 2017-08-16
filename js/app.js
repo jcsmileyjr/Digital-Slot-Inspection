@@ -55,6 +55,12 @@ myApp.config(['$stateProvider', '$urlRouterProvider',function($stateProvider, $u
             url:'/software',
             templateUrl: 'software/software.html',
             controller: "softwareController"
-        })     
+        })
+            //The list state redirects the user to the list.html template and listController via the /list url. 
+        .state('list', {
+            url:'/list',
+            templateUrl: 'toolbar/list.html',
+            controller: "listController"
+        }) 
     
 }]);
