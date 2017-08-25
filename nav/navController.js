@@ -103,8 +103,9 @@ myApp.controller('navController', ["$scope", "SlotMachine","Compliance", "IssueC
         
     };
     
-    //at start of app, the lowerhalf (compliance section) is hidden
+    //at start of app, the lowerhalf (compliance section) is hidden and upper showing
     $scope.showLowerHalf = ComplianceSection.getShowLowerHalf();
+    $scope.showUpperHalf = ComplianceSection.getShowUpperHalf();
     
     //function to show the lower half of app to allow user to pick a compliance issue
     $scope.open = function(){
@@ -113,6 +114,12 @@ myApp.controller('navController', ["$scope", "SlotMachine","Compliance", "IssueC
         
         //gets the value of showLowerHalf
         $scope.showLowerHalf = ComplianceSection.getShowLowerHalf();
+        
+        //Use service to set the showUpperHalf to false
+        ComplianceSection.closeUpperHalf();
+        
+        //gets the value of showLowerHalf
+        $scope.showUpperHalf = ComplianceSection.getShowUpperHalf();        
         
         //reinitize all the compliance issue trackers and numberOfissues for the current slot machine if the status is Skip
         if($scope.completed=="Skip")
@@ -125,11 +132,13 @@ myApp.controller('navController', ["$scope", "SlotMachine","Compliance", "IssueC
     
     //funciton to hide/close the lower half of the app after a slot machine has been skip or saved. 
     $scope.close = function(){
-        //Use service to set the showLowerHalf to false
-        ComplianceSection.closeLowerHalf()
+        //Use service to set the showLowerHalf to false and showUpperHalf to true
+        ComplianceSection.closeLowerHalf();
+        ComplianceSection.openUpperHalf();
         
-        //gets the value of showLowerHalf
+        //gets the value of showLowerHalf and showUpperHalf
         $scope.showLowerHalf = ComplianceSection.getShowLowerHalf();        
+        $scope.showUpperHalf = ComplianceSection.getShowUpperHalf();
     }    
     
     //display the total number of compliance issues found from IssueCounter issueCounter object
