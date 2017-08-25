@@ -19,19 +19,106 @@
 .navSection {
     background-color: #0059B2;
     color: #CACACA;
-    font-size: 110%
+    font-size: 110%;
+    min-height: 100%;
+}
+
+/*change the colors of the navbar to the NavSection colors*/
+.navBackgroundColorToNavSection {
+    background-color: #0059B2;
+}
+
+/*change the color of the link inside the navbar with NavSection colors*/
+.navBackgroundColorToNavSection a {
+    color:  #CACACA;
+    background-color: #0059B2;
+}
+
+/*change background color of navbar toolbar's ul link to NavSection background colors and green text color */
+.navBackgroundColorToNavSection ul a:hover {
+    background-color: #0059B2;
+    color: #0059B2; 
+}
+
+
+/* Change background color of navbar toolbar links when it is open or focused */
+.navBackgroundColorToNavSection .open>a:focus{
+    background-color: #0059B2;
+}
+
+/*change background color of navbar toolbar links after its been visited.*/
+.navBackgroundColorToNavSection ul a:visited {
+    background-color: #0059B2
+}
+
+
+/*change the color of the links (List of Comp. Issues and etc.) inside li inside the navbar with NavSection colors*/
+.navBackgroundColorToNavSection li a   {
+    background-color: #0059B2;
+    color: #CACACA;
+}
+
+/*change the color of the ToolBar Title and background colors of the ul and li inside the navbar with NavSection colors*/
+.navBackgroundColorToNavSection li ul  {
+    background-color: #0059B2;
+    color: #CACACA;
 }
 
 /*css style for the compliance topic section*/
 .complianceSection{
     background-color: #CACACA;
+    color: #0059B2;    
+    min-height: 100%;
+}
+
+/*change the colors of the navbar to the compliance section colors*/
+.navBackgroundColorToComplianceSection {
+    background-color: #CACACA;
     color: #0059B2;
 }
+
+/*change the color of the links (app Title and toolbar cog) inside the navbar with Compliance section colors*/
+.navBackgroundColorToComplianceSection a {
+    color: #0059B2;
+}
+
+/*change the color of the links (List of Comp. Issues and etc.) inside li inside the navbar with Compliance section colors*/
+.navBackgroundColorToComplianceSection li a   {
+    background-color: #CACACA;
+    color: #0059B2;
+}
+
+/*change the color of the ToolBar Title and background colors of the ul and li inside the navbar with Compliance section colors*/
+.navBackgroundColorToComplianceSection li ul  {
+    background-color: #CACACA;
+    color: #0059B2;
+}
+
+/*change background color of navbar toolbar's ul link to Compliance section background colors and green text color */
+.navBackgroundColorToComplianceSection ul a:hover {
+    background-color: #CACACA;
+    color: #0059B2; 
+}
+
+
+/* Change background color of navbar toolbar links when it is open or focused to Compliance section background colors */
+.navBackgroundColorToComplianceSection .open>a:focus{
+    background-color: #CACACA;
+}
+
+/*change background color of navbar toolbar links after its been visited to Compliance section background colors.*/
+.navBackgroundColorToComplianceSection ul a:visited {
+    background-color: #CACACA
+}
+
+/*Not sure how, but is crucial to eliminating the "body" margins */
+body { overflow: hidden }
 
 /*css style for compliance buttons*/
 .complianceButtons {
     background-color: #0059B2;
     color: #CACACA;
+    margin-bottom: 5%;     
 }
 
 /*css style for skip action buttons*/
@@ -64,7 +151,6 @@
 }
 
 
-
 /*transform navigation open button into a circle*/
 .btn-circle {
  border-radius: 50%;
@@ -81,15 +167,22 @@
     color: navy;
 }
 
+/*controls the size of the navbar cog*/
+.cogIconSize {
+    font-size: 20px;
+}
+
 /*change text color to blue*/
 .blue {
     color: navy;
 }
+
 /*increase the size of the checkbox. got tip from https://www.sitepoint.com/community/t/how-to-increase-the-checkbox-size/7856/2 */
 input[type='checkbox'] {
-    width: 4%;
-    height: 4%;
+    width: 2vh;
+    height: 2vh;
 }
+
 
 /*disable the navigation Div*/
 /*tips from https://scotch.io/tutorials/the-many-ways-to-use-ngclass*/
@@ -109,8 +202,6 @@ input[type='checkbox'] {
 a {
     color: #CACACA;
 }
-
-
 
 
 
