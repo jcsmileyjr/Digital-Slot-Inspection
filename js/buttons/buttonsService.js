@@ -2,7 +2,7 @@
 myApp.factory('Button', function () {
 
     /*array of Button compliance variables used to tracked which compliance variable was found*/
-    var button = [{"issue":"Blank Button", "found":false}, {"issue":"Hand-written Label", "found":false}, {"issue":"Cracked", "found":false}, {"issue":"Loose", "found":false}, {"issue":"Button in Wrong Spot", "found":false}, {"issue":"Missing Button", "found":false}];
+    var button = [{"issue":"Blank Button", "found":false}, {"issue":"Hand-written Label", "found":false}, {"issue":"Cracked Button", "found":false}, {"issue":"Loose Button", "found":false}, {"issue":"Button in Wrong Spot", "found":false}, {"issue":"Missing Button", "found":false}];
     
     //array used to tracked found Button compliance issues
     var buttonTracker= [];

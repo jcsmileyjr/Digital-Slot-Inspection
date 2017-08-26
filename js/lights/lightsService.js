@@ -2,7 +2,7 @@
 myApp.factory('Lights', function () {
 
     /*array of Lights compliance variables used to tracked which compliance variable was found*/
-    var lights = [{"issue":"Missing", "found":false}, {"issue":"Loose", "found":false}, {"issue":"Not Working", "found":false}];
+    var lights = [{"issue":"Missing Candle", "found":false}, {"issue":"Loose Candle", "found":false}, {"issue":"Candle Not Working", "found":false}];
     
     //array used to tracked found Lights compliance issues
     var lightsTracker= [];

@@ -177,6 +177,11 @@ body { overflow: hidden }
     color: navy;
 }
 
+/*change compliance issues on List.html to yellow*/
+.complianceIssuesColor {
+    color: #FFEF7F;
+}
+
 /*increase the size of the checkbox. got tip from https://www.sitepoint.com/community/t/how-to-increase-the-checkbox-size/7856/2 */
 input[type='checkbox'] {
     width: 2vh;
@@ -202,6 +207,4 @@ input[type='checkbox'] {
 a {
     color: #CACACA;
 }
-
-
 

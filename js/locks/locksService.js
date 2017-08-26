@@ -2,7 +2,7 @@
 myApp.factory('Locks', function () {
 
     /*array of Locks compliance variables used to tracked which compliance variable was found*/
-    var locks = [{"issue":"CPU Locked", "found":false}, {"issue":"Belly Door Locked", "found":false}, {"issue":"BV Box Locked", "found":false}, {"issue":"Progressive Controller Board Secured", "found":false}, {"issue":"Funds Visible or Loose", "found":false}];
+    var locks = [{"issue":"CPU Un-Locked", "found":false}, {"issue":"Belly Door Un-Locked", "found":false}, {"issue":"BV Box Un-Locked", "found":false}, {"issue":"Progressive Controller Board Un-Secured", "found":false}, {"issue":"Funds Visible or Loose", "found":false}];
     
     //array used to tracked found Locks compliance issues
     var locksTracker= [];
