@@ -208,3 +208,12 @@ a {
     color: #CACACA;
 }
 
+    /* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px) {
+    /*increase the size of the checkbox in mobile view */
+    input[type='checkbox'] {
+        width: 3vh;
+        height: 3vh;
+    }
+}
+
