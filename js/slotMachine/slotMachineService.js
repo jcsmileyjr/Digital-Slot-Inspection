@@ -2,12 +2,25 @@
 myApp.factory('SlotMachine', function(){
     
     /*array of slot machine objects*/
-    var slotMachines = [{"location":"1-1-1", "serialNumber":100100, "EPROM":"ASDF1000", "holdPercentage":89.1, "completed":"Incomplete"}, {"location":"1-1-2", "serialNumber":100102, "EPROM":"ASDF1002", "holdPercentage":89.1, "completed":"Incomplete"}, {"location":"1-1-3", "serialNumber":100103, "EPROM":"ASDF1003", "holdPercentage":89.1, "completed":"Incomplete"}, {"location":"1-1-4", "serialNumber":100104, "EPROM":"ASDF1004", "holdPercentage":89.1, "completed":"Incomplete"}, {"location":"1-1-5", "serialNumber":100105, "EPROM":"ASDF1005", "holdPercentage":89.1, "completed":"Incomplete"}, {"location":"1-2-1", "serialNumber":100200, "EPROM":"ASDF2001", "holdPercentage":89.1, "completed":"Completed"}, {"location":"1-2-2", "serialNumber":100202, "EPROM":"ASDF2002", "holdPercentage":89.1, "completed":"Skip"}, {"location":"1-2-3", "serialNumber":100203, "EPROM":"ASDF2003", "holdPercentage":89.1, "completed":"Incomplete"}, {"location":"1-2-4", "serialNumber":100204, "EPROM":"ASDF2004", "holdPercentage":89.1, "completed":"Incomplete"}, {"location":"1-2-5", "serialNumber":100205, "EPROM":"ASDF2005", "holdPercentage":89.1, "completed":"Incomplete"}];
+    var slotMachines = [{"location":"1-1-1", "serialNumber":100100, "EPROM":"ASDF1000", "holdPercentage":89.1, "completed":"Incomplete"}, {"location":"1-1-2", "serialNumber":100102, "EPROM":"ASDF1002", "holdPercentage":89.1, "completed":"Incomplete"}, {"location":"1-1-3", "serialNumber":100103, "EPROM":"ASDF1003", "holdPercentage":89.1, "completed":"Incomplete"}, {"location":"1-1-4", "serialNumber":100104, "EPROM":"ASDF1004", "holdPercentage":89.1, "completed":"Incomplete"}, {"location":"1-1-5", "serialNumber":100105, "EPROM":"ASDF1005", "holdPercentage":89.1, "completed":"Incomplete"}, {"location":"1-2-1", "serialNumber":100200, "EPROM":"ASDF2001", "holdPercentage":89.1, "completed":"Incomplete"}, {"location":"1-2-2", "serialNumber":100202, "EPROM":"ASDF2002", "holdPercentage":89.1, "completed":"Incomplete"}, {"location":"1-2-3", "serialNumber":100203, "EPROM":"ASDF2003", "holdPercentage":89.1, "completed":"Incomplete"}, {"location":"1-2-4", "serialNumber":100204, "EPROM":"ASDF2004", "holdPercentage":89.1, "completed":"Incomplete"}, {"location":"1-2-5", "serialNumber":100205, "EPROM":"ASDF2005", "holdPercentage":89.1, "completed":"Incomplete"}];
     
     /*object to hold the current slot machine's location*/
-    var currentLocation = {"location":4};    
+    var currentLocation = {"location":4};
+    
+    /*object to hold completed Slot machine count*/
+    var completedCount = {"inspectionProgress":0, "totalCompleted":0};
     
     return {
+        /*function that manipulate the completedCount object by incrementing the totalCompleted property and calculating the inspectionProgress property. */
+        updateCompletedSlotMachineCount: function(){
+            completedCount.totalCompleted = completedCount.totalCompleted + 1;
+            completedCount.inspectionProgress = (completedCount.totalCompleted / slotMachines.length)*100;           
+        },
+        
+        /*function to calculate the current inspection completion percentage and return it*/
+        getInspectionCompletion: function(){            
+            return  completedCount.inspectionProgress;
+        },
         
         /*function to return the current slot machine object*/
         getCurrentSlotMachine: function(){

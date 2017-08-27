@@ -37,7 +37,7 @@ describe("Compliance Sevice:", function() {
         });
         
         it('save a completed slot machine with a MealBook issues', function(){
-            expect(completedArray[0].mealBook[0]).toEqual("Excessive reel tilts");
+            expect(completedArray[0].mealBook[0]).toEqual("Excessive reel tilts in MEAL");
         });
         
         it('save a completed slot machine with a two issues', function(){
@@ -70,7 +70,7 @@ describe("Compliance Sevice:", function() {
         });
         
         it('save a completed slot machine with a MealBook issues', function(){
-            expect(skipArray[0].mealBook[0]).toEqual("Excessive reel tilts");
+            expect(skipArray[0].mealBook[0]).toEqual("Excessive reel tilts in MEAL");
         });
         
         it('save a completed slot machine with a two issues', function(){

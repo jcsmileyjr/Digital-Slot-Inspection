@@ -16,7 +16,7 @@ describe("Lights Sevice", function() {
     
     describe("addLightsIssue()", function(){
         it('Lights compliance issue saved to lights tracker array when chosen by user', function(){
-            expect(tracker[0]).toEqual('Missing');
+            expect(tracker[0]).toEqual('Missing Candle');
         });
     });
     

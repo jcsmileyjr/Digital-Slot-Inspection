@@ -16,7 +16,7 @@ describe("Locks Sevice", function() {
     
     describe("addLocksIssue()", function(){
         it('Locks compliance issue saved to locks tracker array when chosen by user', function(){
-            expect(tracker[0]).toEqual('CPU Locked');
+            expect(tracker[0]).toEqual('CPU Un-Locked');
         });
     });
     

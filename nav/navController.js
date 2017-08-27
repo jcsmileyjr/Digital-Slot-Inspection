@@ -149,6 +149,9 @@ myApp.controller('navController', ["$scope", "SlotMachine","Compliance", "IssueC
         
         //save the  current slot machine details and compliance issues found
         Compliance.completed();
+        
+        //update the inspection completion count and percentage
+        SlotMachine.updateCompletedSlotMachineCount();
                 
         //reset all compliance issue trackers
         Compliance.resetAllComplianceTrackers();
@@ -184,5 +187,11 @@ myApp.controller('navController', ["$scope", "SlotMachine","Compliance", "IssueC
         $scope.setSlotMachine($scope.currentSlotMachine);         
         //close the lower half of the app
         $scope.close();
-    }    
+    }
+    
+    //display the inspection completion percentage in the tool-bar
+    $scope.updateInspectionProgress = function(){
+        $scope.inspectionProgress = SlotMachine.getInspectionCompletion();
+    }   
+    
 }]);
