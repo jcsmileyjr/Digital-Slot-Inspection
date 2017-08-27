@@ -2,7 +2,7 @@
 myApp.factory('Touchscreen', function () {
 
     /*array of Touchscreen compliance variables used to tracked which compliance variable was found*/
-    var touchscreen = [{"issue":"No PayTable", "found":false}, {"issue":"Out", "found":false}, {"issue":"Cracked", "found":false}, {"issue":"Loose", "found":false}];
+    var touchscreen = [{"issue":"No PayTable Accessiable", "found":false}, {"issue":"Touchscreen is Out", "found":false}, {"issue":"Touchscreen is Cracked", "found":false}, {"issue":"Touchscreen is Loose", "found":false}];
     
     //array used to tracked found Touchscreen compliance issues
     var touchscreenTracker= [];

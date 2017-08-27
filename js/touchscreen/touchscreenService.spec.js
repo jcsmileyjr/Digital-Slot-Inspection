@@ -16,7 +16,7 @@ describe("Touchscreen Sevice", function() {
     
     describe("addTouchscreenIssue()", function(){
         it('Touchscreen compliance issue saved to touchscreen tracker array when chosen by user', function(){
-            expect(tracker[0]).toEqual('No PayTable');
+            expect(tracker[0]).toEqual('No PayTable Accessiable');
         });
     });
     

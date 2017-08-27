@@ -2,7 +2,7 @@
 myApp.factory('Reels', function () {
 
     /*array of Reels compliance variables used to tracked which compliance variable was found*/
-    var reels = [{"issue":"Faded Reel Strips", "found":false}, {"issue":"Taped", "found":false}, {"issue":"Wrong Reels", "found":false}];
+    var reels = [{"issue":"Faded Reel Strips", "found":false}, {"issue":"Taped on Reel Strips", "found":false}, {"issue":"Wrong Reel Strips", "found":false}];
     
     //array used to tracked found Reels compliance issues
     var reelsTracker= [];

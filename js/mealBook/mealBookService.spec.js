@@ -16,7 +16,7 @@ describe("MealBook Sevice", function() {
     
     describe("addMealBookIssue()", function(){
         it('MealBook compliance issue saved to mealBook tracker array when chosen by user', function(){
-            expect(tracker[0]).toEqual('Excessive reel tilts');
+            expect(tracker[0]).toEqual('Excessive reel tilts in MEAL');
         });
     });
     

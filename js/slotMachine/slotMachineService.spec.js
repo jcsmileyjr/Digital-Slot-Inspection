@@ -49,41 +49,42 @@ describe("Slot Machine Sevice: currentLocation object", function() {
         it('Search and change to a user chosen location from the current slot machine location (slotMachines[4]))', function(){
             currentSlotMachine = SlotMachine.getSearchSlotMachine('1-2-4');
             expect(currentSlotMachine.location).toEqual('1-2-4');
-        });    
-    
-    
-        it('Return a fail message when the user search for an invalid location )', function(){
-            /*
-            var searchMessage = 'Invalid Location, please try again with correct format/location';
-            currentSlotMachine = SlotMachine.getSearchSlotMachine('2-2-4');
-            expect(currentSlotMachine).toContain('Invalid Location');
-            */
-        });   
+        });          
     });
         
     describe("getTotalCountOfSlotMachines()", function(){
-        it('return the total count of slot machines at start up', function {             count = SlotMachine.getTotalCountOfSlotMachines();
+        it('return the total count of slot machines at start up', function { 
+           count = SlotMachine.getTotalCountOfSlotMachines();
             expect(count).toEqual(10);
         });
-    });     
+    });
+
+    describe("Slot Inspection Completion", function(){ 
+        
+        it('the inspection completion percentage return is a number.', function(){
+            var progress = SlotMachine.getInspectionCompletion();
+            expect(progress).toEqual(jasmine.any(Number));
+        });
+
+        it('The inspection completion percentage change by a positive number', function(){
+            SlotMachine.updateCompletedSlotMachineCount();
+            var progress = SlotMachine.getInspectionCompletion();
+            expect(progress).toEqual(10);
+        });       
+    });/*End of "Bugs found during Navigation describe block"*/
     
-    describe("Bugs found during Navigation", function(){
-        
-    it('Slot Machine location changed from the last slot machine location (slotMachines[9]) to the first slot machine location (slotMachines[1]))', function(){
-        currentSlotMachine = SlotMachine.getSearchSlotMachine('1-2-5');
-        currentSlotMachine = SlotMachine.getNextSlotMachine();
-        expect(currentSlotMachine.location).toEqual('1-1-1');
-    });
-        
-    it('Slot Machine location changed from the first slot machine location (slotMachines[0]) to the last slot machine location (slotMachines[9]))', function(){
-        currentSlotMachine = SlotMachine.getSearchSlotMachine('1-1-1');
-        currentSlotMachine = SlotMachine.getPreviousSlotMachine();
-        expect(currentSlotMachine.location).toEqual('1-2-5');
-    });        
-        
-    it('currentLocatoin to be a number', function(){      
-    });
-        
+    describe("Bugs found during Navigation", function(){        
+        it('Slot Machine location changed from the last slot machine location (slotMachines[9]) to the first slot machine location (slotMachines[1]))', function(){
+            currentSlotMachine = SlotMachine.getSearchSlotMachine('1-2-5');
+            currentSlotMachine = SlotMachine.getNextSlotMachine();
+            expect(currentSlotMachine.location).toEqual('1-1-1');
+        });
+
+        it('Slot Machine location changed from the first slot machine location (slotMachines[0]) to the last slot machine location (slotMachines[9]))', function(){
+            currentSlotMachine = SlotMachine.getSearchSlotMachine('1-1-1');
+            currentSlotMachine = SlotMachine.getPreviousSlotMachine();
+            expect(currentSlotMachine.location).toEqual('1-2-5');
+        });         
     });/*End of "Bugs found during Navigation describe block"*/
      
 });/*End of Slot Machine service Describe block*/

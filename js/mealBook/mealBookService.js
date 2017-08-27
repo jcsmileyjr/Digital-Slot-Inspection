@@ -2,7 +2,7 @@
 myApp.factory('MealBook', function () {
 
     /*array of MealBook compliance variables used to tracked which compliance variable was found*/
-    var mealBook = [{"issue":"Excessive reel tilts", "found":false}, {"issue":"No signature", "found":false}, {"issue":"Wrong ink pen", "found":false}, {"issue":"Missing Meal Book", "found":false}];
+    var mealBook = [{"issue":"Excessive reel tilts in MEAL", "found":false}, {"issue":"No signature in MEAL", "found":false}, {"issue":"Wrong ink pen used in MEAL", "found":false}, {"issue":"Missing Meal Book", "found":false}];
     
     //array used to tracked found MealBook compliance issues
     var mealBookTracker= [];
