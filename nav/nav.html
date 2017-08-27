@@ -48,17 +48,17 @@
             <div class="row blue">
                 <!-- Left side column-->
                 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 rightAlign">
-                    <button type="button" class="btn navButtonSize btn-lg" ng-click="previousSlotMachine()"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+                    <button type="button" class="btn navControlSize btn-lg" ng-click="previousSlotMachine()"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
                 </div>
                 <!-- center column-->
                 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 centerAlign">
-                    <button type="button" class="btn btn-circle navButtonSize btn-lg" ng-click="open()" ng-Disabled = "completeIcon">
+                    <button type="button" class="btn btn-circle navControlSize btn-lg" ng-click="open()" ng-Disabled = "completeIcon">
                         Open
                     </button>                     
                 </div>
                 <!-- right side column-->
                 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 leftAlign">
-                    <button type="button" class="btn navButtonSize btn-lg" ng-click="nextSlotMachine()"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+                    <button type="button" class="btn navControlSize btn-lg" ng-click="nextSlotMachine()"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 centerAlign">
@@ -89,14 +89,14 @@
                         {{location}}
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 leftAlign">  
-                        <i class="fa fa-question" aria-hidden="true"></i>
+                        <!--<i class="fa fa-question" aria-hidden="true"></i>-->
                     </div>
                     <br>
                     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
                         {{serialNumber}}
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 leftAlign">  
-                        <i class="fa fa-question" aria-hidden="true"></i>
+                        <!--<i class="fa fa-question" aria-hidden="true"></i>-->
                     </div>
                     <br>
                     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 " ng-class="{'incompleteColor':incompleteIcon, 'completeColor': completeIcon, 'skipColor': skipIcon}">
@@ -177,12 +177,13 @@
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 centerAlign">   
                     <button type="button" class="btn btn-md yellow" ng-click="skip()">Skip and Continue</button>
                     <br>
-                    <i class="fa fa-question" aria-hidden="true"></i>
+                    <!--<i class="fa fa-question" aria-hidden="true"></i>-->
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 centerAlign">      
                     <button type="button" class="btn btn-md green" ng-click="saveCompleted()">Save and Continue</button>
                     <br>
-                    <i class="fa fa-question" aria-hidden="true"></i>
+                    <br>
+                    <!--<i class="fa fa-question" aria-hidden="true"></i>-->
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 centerAlign">
                     <h4>Total Number of Issues Found {{numberOfIssues}}</h4>    

@@ -1,4 +1,4 @@
-/*Possible style colors #0059B2, #CACAB6, #CACACA or #f2f2ed, #7BAD09, #46B709, #86F993, #5DAD66, #ffff4c, #BF0000 */
+/*Possible style colors #0059B2, #CACAB6, #CACACA or #f2f2ed, #7BAD09, #46B709, #86F993, #5DAD66, #ffff4c, #BF0000, burgandy red #8C001A , grey stone #EEEEEE, alt grey color Gainsboro. CHANGE: #003F0B,   */
 
 /* right side align */
 .rightAlign {
@@ -17,7 +17,7 @@
 
 /*Navigation/Top half section background and text color  */
 .navSection {
-    background-color: #0059B2;
+    background-color: #003F0B;
     color: #CACACA;
     font-size: 110%;
     min-height: 100%;
@@ -25,79 +25,79 @@
 
 /*change the colors of the navbar to the NavSection colors*/
 .navBackgroundColorToNavSection {
-    background-color: #0059B2;
+    background-color: #003F0B;
 }
 
 /*change the color of the link inside the navbar with NavSection colors*/
 .navBackgroundColorToNavSection a {
     color:  #CACACA;
-    background-color: #0059B2;
+    background-color: #003F0B;
 }
 
 /*change background color of navbar toolbar's ul link to NavSection background colors and green text color */
 .navBackgroundColorToNavSection ul a:hover {
     background-color: #0059B2;
-    color: #0059B2; 
+    color: #008C19; /*when hover, turn the cog's color*/
 }
 
 
-/* Change background color of navbar toolbar links when it is open or focused */
+/* Change background color of navbar toolbar div background when it is open or focused */
 .navBackgroundColorToNavSection .open>a:focus{
-    background-color: #0059B2;
+    background-color: #003F0B;
 }
 
-/*change background color of navbar toolbar links after its been visited.*/
+/*change background color of navbar toolbar links and cog after its been visited.*/
 .navBackgroundColorToNavSection ul a:visited {
-    background-color: #0059B2
+    background-color: #003F0B;
 }
 
 
 /*change the color of the links (List of Comp. Issues and etc.) inside li inside the navbar with NavSection colors*/
 .navBackgroundColorToNavSection li a   {
-    background-color: #0059B2;
+    background-color: #003F0B;
     color: #CACACA;
 }
 
 /*change the color of the ToolBar Title and background colors of the ul and li inside the navbar with NavSection colors*/
 .navBackgroundColorToNavSection li ul  {
-    background-color: #0059B2;
+    background-color: #003F0B;
     color: #CACACA;
 }
 
 /*css style for the compliance topic section*/
 .complianceSection{
     background-color: #CACACA;
-    color: #0059B2;    
+    color: #003F0B;    
     min-height: 100%;
 }
 
 /*change the colors of the navbar to the compliance section colors*/
 .navBackgroundColorToComplianceSection {
     background-color: #CACACA;
-    color: #0059B2;
+    color: #003F0B;
 }
 
-/*change the color of the links (app Title and toolbar cog) inside the navbar with Compliance section colors*/
+/*change the color of the links (app Title) inside the navbar with Compliance section colors*/
 .navBackgroundColorToComplianceSection a {
-    color: #0059B2;
+    color: #003F0B;
 }
 
-/*change the color of the links (List of Comp. Issues and etc.) inside li inside the navbar with Compliance section colors*/
+/*change the color of the navbar toolbar cog and links (List of Comp. Issues and etc.) inside li inside the navbar with Compliance section colors*/
 .navBackgroundColorToComplianceSection li a   {
     background-color: #CACACA;
-    color: #0059B2;
+    color: #003F0B;
 }
 
 /*change the color of the ToolBar Title and background colors of the ul and li inside the navbar with Compliance section colors*/
 .navBackgroundColorToComplianceSection li ul  {
     background-color: #CACACA;
-    color: #0059B2;
+    color: #003F0B;
 }
 
 /*change background color of navbar toolbar's ul link to Compliance section background colors and green text color */
 .navBackgroundColorToComplianceSection ul a:hover {
     background-color: #CACACA;
-    color: #0059B2; 
+    color: #003F0B; 
 }
 
 
@@ -116,7 +116,7 @@ body { overflow: auto;} */
 
 /*css style for compliance buttons*/
 .complianceButtons {
-    background-color: #0059B2;
+    background-color: #003F0B;
     color: #CACACA;
     margin-bottom: 5%;     
 }
@@ -137,17 +137,17 @@ body { overflow: auto;} */
 
 /*pale red color for incomplete status*/
 .incompleteColor {
-    color: orangered;
+    color: red;
 }
 
 /*pale green color for complete status*/
 .completeColor {
-    color: #5DAD66;
+    color: lawngreen;
 }
 
 /*pale yellow color for skip status*/
 .skipColor {
-    color:#FFEF7F;
+    color:yellow;
 }
 
 
@@ -158,6 +158,10 @@ body { overflow: auto;} */
 
 /*navigation buttons size and text color */
 .complianceChkboxSize {
+    font-size: 200%;
+}
+
+.navControlSize {
     font-size: 200%;
 }
 
@@ -190,12 +194,12 @@ input[type='checkbox'] {
 
 /*alternate background color between shades (B8E5E5) of light blue for user data  */
 .alternatingRows:nth-child(even) {
-  background-color: #007FFE ;
+  background-color: #008C19 ;
 } 
 
 /* unvisited link */
 a {
-    color: #CACACA;
+    color: #003F0B;
 }
 
     /* Extra Small Devices, Phones */ 
