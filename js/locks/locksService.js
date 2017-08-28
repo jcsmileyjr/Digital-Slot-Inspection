@@ -44,7 +44,7 @@ myApp.factory('Locks', function () {
         },
         
         //Loop through each element in the locks array resetting each element issue's found property to false. This is use when a user save and continue to another slot machine.
-        resetLocksCheckbox(){                        
+        resetLocksCheckbox: function(){                        
             for(var i=0;i<locks.length;i++){
                 locks[i].found = false;
             }

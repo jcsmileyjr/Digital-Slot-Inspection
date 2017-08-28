@@ -44,7 +44,7 @@ myApp.factory('Lights', function () {
         },
         
         //Loop through each element in the lights array resetting each element issue's found property to false. This is use when a user save and continue to another slot machine.
-        resetLightsCheckbox(){                        
+        resetLightsCheckbox: function(){                        
             for(var i=0;i<lights.length;i++){
                 lights[i].found = false;
             }

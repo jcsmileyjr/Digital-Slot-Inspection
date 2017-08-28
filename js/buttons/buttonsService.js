@@ -44,7 +44,7 @@ myApp.factory('Button', function () {
         },
         
         //Loop through each element in the button array resetting each element issue's found property to false. This is use when a user save and continue to another slot machine.
-        resetButtonCheckbox(){                        
+        resetButtonCheckbox: function(){                        
             for(var i=0;i<button.length;i++){
                 button[i].found = false;
             }
