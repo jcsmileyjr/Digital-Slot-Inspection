@@ -44,7 +44,7 @@ myApp.factory('Touchscreen', function () {
         },
         
         //Loop through each element in the touchscreen array resetting each element issue's found property to false. This is use when a user save and continue to another slot machine.
-        resetTouchscreenCheckbox(){                        
+        resetTouchscreenCheckbox: function(){                        
             for(var i=0;i<touchscreen.length;i++){
                 touchscreen[i].found = false;
             }

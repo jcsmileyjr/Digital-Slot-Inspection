@@ -44,7 +44,7 @@ myApp.factory('MealBook', function () {
         },
         
         //Loop through each element in the mealBook array resetting each element issue's found property to false. This is use when a user save and continue to another slot machine.
-        resetMealBookCheckbox(){                        
+        resetMealBookCheckbox: function(){                        
             for(var i=0;i<mealBook.length;i++){
                 mealBook[i].found = false;
             }
