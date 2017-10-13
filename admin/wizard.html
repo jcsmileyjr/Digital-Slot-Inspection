@@ -12,34 +12,34 @@
         <h1 class="centerAlign">New Slot Inspection Wizard</h1>
         <br>
         <br>
-        <!--Label and input for Casino Name input section -->
-        <div class="col-xs-5  col-sm-5 col-md-5 col-lg-5">
-            <label>Casino Name  <span><i class="fa fa-home" aria-hidden="true"></i></span></label>       
-        </div>
-        <div class="col-xs-7  col-sm-7 col-md-7 col-lg-7 leftAlign">
-            <input type="text" ng-model="casinoName" placeholder="Ex: Horseshoe Casino">  
-        </div>
-        <br>
-        <br>
-        <!--Label and input for Month-Year input section -->
-        <div class="col-xs-5  col-sm-5 col-md-5 col-lg-5">
-            <label>Month-Year  <span><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span></label>       
-        </div>
-        <div class="col-xs-7  col-sm-7 col-md-7 col-lg-7 leftAlign">
-            <input type="text" ng-model="date" placeholder="Ex: Oct. 2017">  
-        </div>
-        <br>
-        <br>
-        <!--Label and input for Agent Name input section -->
-        <div class="col-xs-5  col-sm-5 col-md-5 col-lg-5">
-            <label>Agent Name <span><i class="fa fa-user" aria-hidden="true"></i></span></label>       
-        </div>
-        <div class="col-xs-7  col-sm-7 col-md-7 col-lg-7 leftAlign">
-            <input type="text" ng-model="agentName" placeholder="Ex: JC Smiley">  
-        </div>
-        <br>
-        <br>   
         <form name="wizardform" novalidate>
+            <!--Label and input for Casino Name input section -->
+            <div class="col-xs-5  col-sm-5 col-md-5 col-lg-5">
+                <label>Casino Name  <span><i class="fa fa-home" aria-hidden="true"></i></span></label>       
+            </div>
+            <div class="col-xs-7  col-sm-7 col-md-7 col-lg-7 leftAlign">
+                <input type="text" ng-model="casinoName" placeholder="Ex: Horseshoe Casino" required>  
+            </div>
+            <br>
+            <br>
+            <!--Label and input for Month-Year input section -->
+            <div class="col-xs-5  col-sm-5 col-md-5 col-lg-5">
+                <label>Month-Year  <span><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span></label>       
+            </div>
+            <div class="col-xs-7  col-sm-7 col-md-7 col-lg-7 leftAlign">
+                <input type="text" ng-model="date" placeholder="Ex: Oct. 2017" required>  
+            </div>
+            <br>
+            <br>
+            <!--Label and input for Agent Name input section -->
+            <div class="col-xs-5  col-sm-5 col-md-5 col-lg-5">
+                <label>Agent Name <span><i class="fa fa-user" aria-hidden="true"></i></span></label>       
+            </div>
+            <div class="col-xs-7  col-sm-7 col-md-7 col-lg-7 leftAlign">
+                <input type="text" ng-model="agentName" placeholder="Ex: JC Smiley" required>  
+            </div>
+            <br>
+            <br>   
             <div class="col-xs-12  col-sm-12 col-md-12 col-lg-12">            
                 <h4><span class="incompleteColor">WARNING:</span> Substitute a space between location with dashes or delete the space. Example is "1 16 02" should be "1-16-02". Example AA 102" should be "AA102"</h4>
                 <textarea rows="5" cols="10" name="exampleLocationList" >
@@ -57,7 +57,6 @@
                 <textarea name="locTextArea" rows="10" cols="30" ng-model="locationWizard" placeholder="Copy a column of slot machine's location from the excel sheet and paste HERE" data-toggle= "tooltip" title="This is a Required field" required>
 
                 </textarea>
-                <span ng-show="wizardform.locTextArea.$invalid && !wizardform.locTextArea.$pristine">Required!</span>
             </div>
             
             <!--Tile for List of Locations Pasteing area and example -->
