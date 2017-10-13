@@ -5,7 +5,7 @@ var myApp = angular.module('DSI', ['ui.router']);
 myApp.config(['$stateProvider', '$urlRouterProvider',function($stateProvider, $urlRouterProvider, $state) {
 
     //If no route or link is select, the app redirects to the nav page
-    $urlRouterProvider.otherwise('/nav');
+    $urlRouterProvider.otherwise('/splash');
 
     $stateProvider
         //The nav state redirects the user to the nav.html template and navController via the /nav url. 
@@ -61,6 +61,17 @@ myApp.config(['$stateProvider', '$urlRouterProvider',function($stateProvider, $u
             url:'/list',
             templateUrl: 'toolbar/list.html',
             controller: "listController"
-        }) 
+        })
+        //The splash state redirects the user to the splash.html template via the /splash url. 
+        .state('splash', {
+            url:'/splash',
+            templateUrl: 'admin/splash.html'
+        })
+        //The wizard state redirects the user to the wizard.html template and controller via the /wizard url. 
+        .state('wizard', {
+            url:'/wizard',
+            templateUrl: 'admin/wizard.html',
+            controller: "wizardController"
+        })       
     
 }]);

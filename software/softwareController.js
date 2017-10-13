@@ -1,14 +1,5 @@
 myApp.controller('softwareController',  function($scope, $state, Software, IssueCounter, SlotMachine){
     
-    //use the SlotMachine service to get the slot machine at the current location to setup a new currentSlotMachine    
-    $scope.currentSlotMachine = SlotMachine.getCurrentSlotMachine();
-    
-    //assigns the slot machine, received as a parameter, location to the scope's location 
-    $scope.signature= $scope.currentSlotMachine.EPROM;
-        
-    //assigns the slot machine, received as a parameter, serial number to the scope's serial number 
-    $scope.percentage = $scope.currentSlotMachine.holdPercentage;    
-    
     //Loads the Mealbook compliance issues used in the software.html checkboxes
     $scope.software = Software.getSoftware();
     
