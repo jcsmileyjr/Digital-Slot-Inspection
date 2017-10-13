@@ -10,13 +10,6 @@
             <div class="col-xs-12  col-sm-12 col-md-12 col-lg-12">
                 <h1>Software Compliance Issues</h1>
             </div>
-            <div class="col-xs-12  col-sm-12 col-md-12 col-lg-12">
-                Current EPROM Signature:   {{signature}}
-            </div>
-
-            <div class="col-xs-12  col-sm-12 col-md-12 col-lg-12">
-                Current Hold Percentage:   {{percentage}}
-            </div>             
         </div>
         <br>
         <div class="row complianceChkboxSize" ng-repeat="issues in software"  ng-class="{'completeColor':issues.found}">

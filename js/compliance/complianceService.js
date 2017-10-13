@@ -23,8 +23,10 @@ myApp.factory('Compliance', ["SlotMachine", "IssueCounter", "MealBook","Button",
            var locks = Locks.getReelsTracker();
            var software = Software.getSoftwareTracker();
 
-           //add to the array the current slot machine identifer and compliance issues
+           //add to the compliance array the current slot machine identifer and compliance issues if the current object has an issue
+           if(numberOfIssues > 0){
            compliance.push({"serialNumber":currentSlotMachine.serialNumber, "numberOfIssues":numberOfIssues, "completed": "Completed", "mealBook": mealBook, "button":button, "lights": lights, "touchscreen":touchscreen, "locks": locks, "reels":reels, "software": software});
+           }
            
            //update the current slot machine completed property           
            SlotMachine.updateSlotMachineCompleted();

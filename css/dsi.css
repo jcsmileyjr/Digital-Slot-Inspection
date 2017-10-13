@@ -192,7 +192,8 @@ input[type='checkbox'] {
     height: 2vh;
 }
 
-/*alternate background color between shades (B8E5E5) of light blue for user data  */
+/*alternate background color between shades of green on the list.html page*/
+/*depreicated, now use the horizontal line*/
 .alternatingRows:nth-child(even) {
   background-color: #008C19 ;
 } 
@@ -200,6 +201,47 @@ input[type='checkbox'] {
 /* unvisited link */
 a {
     color: #003F0B;
+}
+
+/*colors for the input textareas on the wizard.html page*/
+textarea {
+    width: 100%;
+    font-weight: bolder;
+    color: black;
+    
+}
+
+/*Make the "start" button on the splash page grey with blue letters*/
+.splashButtons {
+    background-color: #CACACA;
+    color: navy;
+}
+
+/*increase the size of the back button in the wiard.html*/
+.backButtonIcon {
+    font-size: 150%;
+}
+
+.indentList {
+    text-indent: 5%;
+}
+
+/*Got code from https://stackoverflow.com/questions/9140585/hr-not-seen-when-printing*/
+/*Make the hortizontal line displayed between slot machine objects in the list.html more noticeable when printing*/
+hr {
+    display: block;
+    height: 1px;
+    background: transparent;
+    width: 100%;
+    border: none;
+    border-top: solid 1px #aaa;
+}
+
+/*Got this online somewhere. This hides html elements  that a dev don't want to be shown on the print document*/
+@media print {
+    .dontPrint {
+        display: none;
+    }
 }
 
     /* Extra Small Devices, Phones */ 
