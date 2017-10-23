@@ -1,0 +1,19 @@
+{
+  "name": "digital-slot-inspection",
+  "productName": "Digital Slot Inspection",
+  "version": "1.0.0",
+  "description": "electronic version of the paper slot inspection",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron index.js",
+    "package-win": "electron-packager . --overwrite --icon=if_man_wink_2411818.ico --platform=win32 --arch=ia32 --prune=true --out=Digital-Slot-Inspection --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Digital Slot Inspection\""
+  },
+  "author": "JC Smiley",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^1.7.8",
+    "electron-packager": "^9.1.0",
+    "excel-as-json": "^2.0.1",
+    "jquery": "^3.2.1"
+  }
+}

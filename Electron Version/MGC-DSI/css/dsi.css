@@ -1,0 +1,257 @@
+/*Possible style colors #0059B2, #CACAB6, #CACACA or #f2f2ed, #7BAD09, #46B709, #86F993, #5DAD66, #ffff4c, #BF0000, burgandy red #8C001A , grey stone #EEEEEE, alt grey color Gainsboro. CHANGE: #003F0B,   */
+
+/* right side align */
+.rightAlign {
+    text-align: right;   
+}
+
+/* left side align */
+.leftAlign {
+    text-align:left;   
+}
+
+/* center alignment*/
+.centerAlign {
+    text-align: center;
+}
+
+/*Navigation/Top half section background and text color  */
+.navSection {
+    background-color: #003F0B;
+    color: #CACACA;
+    font-size: 110%;
+    min-height: 100%;
+}
+
+/*change the colors of the navbar to the NavSection colors*/
+.navBackgroundColorToNavSection {
+    background-color: #003F0B;
+}
+
+/*change the color of the link inside the navbar with NavSection colors*/
+.navBackgroundColorToNavSection a {
+    color:  #CACACA;
+    background-color: #003F0B;
+}
+
+/*change background color of navbar toolbar's ul link to NavSection background colors and green text color */
+.navBackgroundColorToNavSection ul a:hover {
+    background-color: #0059B2;
+    color: #008C19; /*when hover, turn the cog's color*/
+}
+
+
+/* Change background color of navbar toolbar div background when it is open or focused */
+.navBackgroundColorToNavSection .open>a:focus{
+    background-color: #003F0B;
+}
+
+/*change background color of navbar toolbar links and cog after its been visited.*/
+.navBackgroundColorToNavSection ul a:visited {
+    background-color: #003F0B;
+}
+
+
+/*change the color of the links (List of Comp. Issues and etc.) inside li inside the navbar with NavSection colors*/
+.navBackgroundColorToNavSection li a   {
+    background-color: #003F0B;
+    color: #CACACA;
+}
+
+/*change the color of the ToolBar Title and background colors of the ul and li inside the navbar with NavSection colors*/
+.navBackgroundColorToNavSection li ul  {
+    background-color: #003F0B;
+    color: #CACACA;
+}
+
+/*css style for the compliance topic section*/
+.complianceSection{
+    background-color: #CACACA;
+    color: #003F0B;    
+    min-height: 100%;
+}
+
+/*change the colors of the navbar to the compliance section colors*/
+.navBackgroundColorToComplianceSection {
+    background-color: #CACACA;
+    color: #003F0B;
+}
+
+/*change the color of the links (app Title) inside the navbar with Compliance section colors*/
+.navBackgroundColorToComplianceSection a {
+    color: #003F0B;
+}
+
+/*change the color of the navbar toolbar cog and links (List of Comp. Issues and etc.) inside li inside the navbar with Compliance section colors*/
+.navBackgroundColorToComplianceSection li a   {
+    background-color: #CACACA;
+    color: #003F0B;
+}
+
+/*change the color of the ToolBar Title and background colors of the ul and li inside the navbar with Compliance section colors*/
+.navBackgroundColorToComplianceSection li ul  {
+    background-color: #CACACA;
+    color: #003F0B;
+}
+
+/*change background color of navbar toolbar's ul link to Compliance section background colors and green text color */
+.navBackgroundColorToComplianceSection ul a:hover {
+    background-color: #CACACA;
+    color: #003F0B; 
+}
+
+
+/* Change background color of navbar toolbar links when it is open or focused to Compliance section background colors */
+.navBackgroundColorToComplianceSection .open>a:focus{
+    background-color: #CACACA;
+}
+
+/*change background color of navbar toolbar links after its been visited to Compliance section background colors.*/
+.navBackgroundColorToComplianceSection ul a:visited {
+    background-color: #CACACA
+}
+
+/*Not sure how, but is crucial to eliminating the "body" margins  
+body { overflow: auto;} */
+
+/*css style for compliance buttons. Use to be no font-size*/
+.complianceButtons {
+    background-color: #003F0B;
+    color: #CACACA;
+    margin-bottom: 5%;
+    font-size: 150%;
+}
+
+/*css style for skip action buttons*/
+.yellow {
+    background-color: #FFEF7F;
+    color: navy;
+    font-weight: bolder;
+}
+
+/*css style for complete action buttons*/
+.green {
+    background-color: #5DAD66;
+    color: navy;
+    font-weight: bolder;
+}
+
+/*pale red color for incomplete status*/
+.incompleteColor {
+    color: red;
+}
+
+/*pale green color for complete status*/
+.completeColor {
+    color: lawngreen;
+}
+
+/*pale yellow color for skip status*/
+.skipColor {
+    color:yellow;
+}
+
+
+/*transform navigation open button into a circle*/
+.btn-circle {
+ border-radius: 50%;
+}
+
+/*navigation buttons size and text color */
+.complianceChkboxSize {
+    font-size: 200%;
+}
+
+/*Use to be 200%. This control the size of the navigational conrols on the nav.html page*/
+.navControlSize {
+    font-size: 500%;
+}
+
+
+/*chang color of search icon*/
+.searchIcon {
+    color: navy;
+}
+
+/*controls the size of the navbar cog*/
+.cogIconSize {
+    font-size: 20px;
+}
+
+/*change text color to blue*/
+.blue {
+    color: navy;
+}
+
+/*change compliance issues on List.html to yellow*/
+.complianceIssuesColor {
+    color: #FFEF7F;
+}
+
+/*increase the size of the checkbox. got tip from https://www.sitepoint.com/community/t/how-to-increase-the-checkbox-size/7856/2 */
+input[type='checkbox'] {
+    width: 2vh;
+    height: 2vh;
+}
+
+/*alternate background color between shades of green on the list.html page*/
+/*depreicated, now use the horizontal line*/
+.alternatingRows:nth-child(even) {
+  background-color: #008C19 ;
+} 
+
+/* unvisited link */
+a {
+    color: #003F0B;
+}
+
+/*colors for the input textareas on the wizard.html page*/
+textarea {
+    width: 100%;
+    font-weight: bolder;
+    color: black;
+    
+}
+
+/*Make the "start" button on the splash page grey with blue letters*/
+.splashButtons {
+    background-color: #CACACA;
+    color: navy;
+}
+
+/*increase the size of the back button in the wiard.html*/
+.backButtonIcon {
+    font-size: 150%;
+}
+
+.indentList {
+    text-indent: 5%;
+}
+
+/*Got code from https://stackoverflow.com/questions/9140585/hr-not-seen-when-printing*/
+/*Make the hortizontal line displayed between slot machine objects in the list.html more noticeable when printing*/
+hr {
+    display: block;
+    height: 1px;
+    background: transparent;
+    width: 100%;
+    border: none;
+    border-top: solid 1px #aaa;
+}
+
+/*Got this online somewhere. This hides html elements  that a dev don't want to be shown on the print document*/
+@media print {
+    .dontPrint {
+        display: none;
+    }
+}
+
+    /* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px) {
+    /*increase the size of the checkbox in mobile view */
+    input[type='checkbox'] {
+        width: 3vh;
+        height: 3vh;
+    }
+}
+

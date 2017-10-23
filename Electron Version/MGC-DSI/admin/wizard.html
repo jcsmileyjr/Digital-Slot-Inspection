@@ -1,0 +1,80 @@
+<div class="row complianceSection">
+    
+    <!--Sets the page to the size of the view-port -->
+    <!--Left-side view-port -->
+    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 rightAlign backButtonIcon">
+        <br>        
+        <a href="#" ><span><i class="fa fa-undo incompleteColor" aria-hidden="true"></i></span></a>
+    </div>
+    
+    <!--inner view-port -->
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <h1 class="centerAlign">New Slot Inspection Wizard</h1>
+        <br>
+        <br>
+        <form name="wizardform" novalidate>
+            <!--Label and input for Casino Name input section -->
+            <div class="col-xs-5  col-sm-5 col-md-5 col-lg-5">
+                <label>Casino Name  <span><i class="fa fa-home" aria-hidden="true"></i></span></label> 
+            </div>
+            <div class="col-xs-7  col-sm-7 col-md-7 col-lg-7 leftAlign">
+                <select ng-model="casinoName">
+                    <option ng-repeat="x in casinos" value={{x}}>{{x}}</option>
+                </select>  
+            </div>
+            <br>
+            <br>
+            <!--Label and input for Month-Year input section -->
+            <div class="col-xs-5  col-sm-5 col-md-5 col-lg-5">
+                <label>Month-Year  <span><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span></label>       
+            </div>
+            <div class="col-xs-7  col-sm-7 col-md-7 col-lg-7 leftAlign">
+                <input type="date" ng-model="date" placeholder="Ex: Oct. 2017" required>  
+            </div>
+            <br>
+            <br>
+            <!--Label and input for Agent Name input section -->
+            <div class="col-xs-5  col-sm-5 col-md-5 col-lg-5">
+                <label>Agent Name <span><i class="fa fa-user" aria-hidden="true"></i></span></label>       
+            </div>
+            <div class="col-xs-7  col-sm-7 col-md-7 col-lg-7 leftAlign">
+                <input type="text" ng-model="agentName" placeholder="Ex: JC Smiley" required>  
+            </div>
+            <br>
+            <br>   
+            <div class="col-xs-12  col-sm-12 col-md-12 col-lg-12">            
+                <h4><span class="incompleteColor">WARNING:</span> Substitute a space between location with dashes or delete the space. Example is "1 16 02" should be "1-16-02". Example AA 102" should be "AA102"</h4>
+                <textarea rows="5" cols="10" name="exampleLocationList" >
+                                Example:
+                    010001  AA003   1-1-05  1-10-03
+                    010002  AA004   1-1-02  1-12-01
+                    010003  AA003   1- -04  1-09-32 
+
+                </textarea> 
+            </div>        
+
+            <!--Tile for List of Locations Pasteing area and example -->
+            <div class="col-xs-12  col-sm-12 col-md-12 col-lg-12">
+                <h3>Copy and Paste List of Slot Machine's Locations</h3>
+                <textarea name="locTextArea" rows="10" cols="30" ng-model="locationWizard" placeholder="Copy a column of slot machine's location from the excel sheet and paste HERE" data-toggle= "tooltip" title="This is a Required field" required>
+
+                </textarea>
+            </div>
+            
+            <!--Tile for List of Locations Pasteing area and example -->
+            <div class="col-xs-12  col-sm-12 col-md-12 col-lg-12">
+                <h3>Copy and Paste List of Slot Machine's Serial Numbers</h3>
+                <textarea name="serialNumberTextArea" rows="10" cols="30" ng-model="serialNumberWizard" placeholder="Copy a column of slot machine's serial numbers, THAT MATCH THE LOCATION NUMBERS, from the excel sheet and paste HERE" data-toggle= "tooltip" title="This is a Required field" required>
+
+                </textarea>
+            </div>
+            <div class="col-xs-12  col-sm-12 col-md-12 col-lg-12 centerAlign">
+                <br>
+                <p><button type="submit" class="btn btn-lg green blue" ng-click="process(locationWizard, serialNumberWizard, casinoName, date, agentName)" ng-disabled="wizardform.$invalid" data-toggle= "tooltip" title="You must copy and paste a list of slot machine's Locations and Serial Number to continue">Start</button></p>
+            </div>
+        </form>
+    </div><!--end of inner view-port -->
+    
+    <!--right-side view-port -->
+    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
+</div><!--end of mealBook Page-->

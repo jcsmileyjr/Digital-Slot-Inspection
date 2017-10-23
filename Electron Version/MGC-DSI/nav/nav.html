@@ -1,0 +1,197 @@
+<div class="row" ng-class="{'navBackgroundColorToNavSection':showUpperHalf, 'navBackgroundColorToComplianceSection':showLowerHalf }">
+<nav >
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="navbar-header col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <a class="navbar-brand" >Digital Slot Inspection</a>                
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 rightAlign">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle cogIconSize" data-toggle="dropdown" ng-click="updateInspectionProgress()"><span class="fa fa-cog rightAlign" aria-hidden="true"></span></a>
+                    <ul class="dropdown-menu">
+                        <li class="centerAlign">Tool-Bar</li>
+                        <li class=" complianceSectionToolBarLinks"><a ui-sref="list">List of Found Compliance Issues</a></li>
+                        <li class=" complianceSectionToolBarLinks"><a>Slot Inspection Progress: {{inspectionProgress | number}} %</a></li>
+                    </ul>                
+                </li>
+            </ul>
+        </div>    
+    </div>    
+</nav>
+</div>
+<div class="row navSection" ng-if="showUpperHalf==true">
+    <br>
+    <br>
+<div class="container-fluid">  
+        <!-- left border column-->
+        <div class="hidden-xs col-sm-2 col-md-2 col-lg-2"></div>        
+        
+        <!-- central column, -->
+        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+        <!--Display Navigation controls-->
+        <div class= "row">  
+            <h2 class="centerAlign">Navigation Controls</h2>
+            <!--Second row containing Next and Previous titles-->
+            <div class="row">
+                <!-- Left side column-->
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 rightAlign">
+                    Previous
+                </div>
+                <!--center column-->
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
+                <!--right side column-->
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 leftAlign">
+                    Next
+                </div>
+            </div>
+            <!--Third row containing Next, Open, and Previous controls   data-toggle= "tooltip” data-placement= "auto right" data-trigger= "hover” data-animation="true”--> 
+            <div class="row blue">
+                <!-- Left side column-->
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 rightAlign">
+                    <button type="button" class="btn navControlSize btn-lg" ng-click="previousSlotMachine()" data-toggle= "tooltip" title="Go to Slot Location before this location" data-placement= "auto"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+                </div>
+                <!-- center column-->
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 centerAlign">
+                    <button type="button" class="btn btn-circle navControlSize btn-lg" ng-click="open()" ng-Disabled = "completeIcon" data-toggle= "tooltip" title="Click to document Compliance issues" data-placement= "auto">
+                        Open
+                    </button>                     
+                </div>
+                <!-- right side column-->
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 leftAlign">
+                    <button type="button" class="btn navControlSize btn-lg" ng-click="nextSlotMachine()"><i class="fa fa-arrow-right" aria-hidden="true" data-toggle= "tooltip" title="Go to Slot Location after this location" data-placement= "auto"></i></button>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 centerAlign">
+                <input type="checkbox" ng-model="showSearchBox" data-toggle= "tooltip" title="Show a search bar" data-placement= "auto"> Enable Search Box
+            </div>
+            <!--Top row containing search button -->           
+            <div class="row centerAlign blue" ng-show="showSearchBox">
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
+                <form>                   
+                  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 input-group">
+                    <input type="text" class="form-control" placeholder="Search" ng-model="userLocation">
+                    <div class="input-group-btn">
+                      <button class="btn" type="submit"ng-click="searchSlotMachine(userLocation)"><i class="fa fa-search searchIcon" aria-hidden="true"></i></button>
+                    </div>
+                  </div>
+                </form>                
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>               
+            </div>            
+        <!--Display current slot machine Details-->
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+            <br>
+            <div class="row">
+                <!-- left side column-->
+                <div class="col-xs-1 col-sm-1 col-md-2 col-lg-4"></div>
+                <div class="col-xs-10 col-sm-10 col-md-8 col-lg-4">
+                    <h4>Current Slot Machine</h4>
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        Location
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 leftAlign">  
+                        {{location}}
+                    </div>
+                    <br>
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        Serial #
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 leftAlign">  
+                        {{serialNumber}}
+                    </div>
+                    <br>
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 " ng-class="{'incompleteColor':incompleteIcon, 'completeColor': completeIcon, 'skipColor': skipIcon}">
+                        {{completed}}              
+                    </div>
+                    
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 leftAlign">  
+                        <span ng-show="incompleteIcon"><i class="fa fa-ban incompleteColor" aria-hidden="true"></i></span>
+                        <span ng-show="completeIcon"><i class="fa fa-check completeColor" aria-hidden="true"></i></span>
+                        <span ng-show="skipIcon"><i class="fa fa-exclamation skipColor" aria-hidden="true"></i></span>  
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-class="{'incompleteColor':incompleteIcon, 'completeColor': completeIcon, 'skipColor': skipIcon}">              
+                            {{status}}
+                    </div>        
+                </div >                
+                <!-- right side column-->
+                <div class="col-xs-1 col-sm-1 col-md-2 col-lg-4"></div>            
+            </div><!--End of slot machine details row-->
+        </div>
+        </div>
+        </div>
+        <!-- right border column-->
+        <div class="hidden-xs col-sm-2 col-md-2 col-lg-2"></div>
+
+</div>
+</div><!--end of Navigation Section-->
+<div class="row complianceSection" ng-if="showLowerHalf==true">
+    <br>
+    <div class="container-fluid">
+        <!-- left border column-->
+        <div class="hidden-xs col-sm-2 col-md-2 col-lg-4"></div>         
+        <!-- central column-->
+        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-4">        
+            <h2 class="centerAlign">Click a Button to Document Compliance Issues</h2>
+                <!--Display the top row of the compliance issues buttons-->
+                <div class="row">   
+                    <!--First column of the top row featuring the Meal Book Issues-->
+                    <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">   
+                        <button type="button" class="btn btn-lg complianceButtons" ui-sref="mealBook">Meal Book</button>           
+                    </div>
+
+                    <!--Second column of the top row featuring the Buttons Issues-->
+                    <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">   
+                        <button type="button" class="btn btn-lg complianceButtons" ui-sref="button">Buttons</button>           
+                    </div>  
+
+                    <!--Third column of the top row featuring the Reel Strip Issues-->
+                    <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">   
+                        <button type="button" class="btn btn-lg complianceButtons" ui-sref="reels">Reel Strip</button>           
+                    </div>
+                    <!--Forth column of the top row featuring the Software Issues-->
+                    <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">   
+                        <button type="button" class="btn btn-lg complianceButtons" ui-sref="software">Software</button>           
+                    </div>               
+                </div><!--end of top row-->
+
+                <!--Display the bottom row of the compliance issues buttons-->
+                <br>
+                <div class="row">   
+                    <!--First column of the bottom row featuring the Tower Lights Issues-->
+                    <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">   
+                        <button type="button" class="btn btn-lg complianceButtons" ui-sref="lights">Tower Lights</button>           
+                    </div>
+
+                    <!--Second column of the bottom row featuring the TouchScreen Issues-->
+                    <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">   
+                        <button type="button" class="btn btn-lg complianceButtons" ui-sref="touchscreen">Touchscreen</button>           
+                    </div>  
+
+                    <!--Third column of the bottom row featuring the Secured Boards Issues-->
+                    <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">   
+                        <button type="button" class="btn btn-lg complianceButtons" ui-sref="locks">Secured CPU</button>           
+                    </div>              
+                </div><!--end of lower row-->       
+            <div class="row">
+                <br>
+                <!--Display the button navigate forward to the next slot machine-->
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 centerAlign">   
+                    <button type="button" class="btn btn-md yellow" ng-click="skip()" data-toggle= "tooltip" title="You will come back later, not finish" data-placement= "auto">Skip and Continue</button>
+                    <br>
+                    <!--<i class="fa fa-question" aria-hidden="true"></i>-->
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 centerAlign">      
+                    <button type="button" class="btn btn-md green" ng-click="saveCompleted()" data-toggle= "tooltip" title="You are finish with this slot machine" data-placement= "auto">Save and Continue</button>
+                    <br>
+                    <br>
+                    <!--<i class="fa fa-question" aria-hidden="true"></i>-->
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 centerAlign">
+                    <h4>Total Number of Issues Found {{numberOfIssues}}</h4>    
+                </div>  
+            </div><!--end of Action Button Row--> 
+        </div><!--end of central column-->
+        <!-- right border column-->
+        <div class="hidden-xs col-sm-2 col-md-2 col-lg-4"></div>        
+    </div>
+    
+</div><!--end of Compliance Issue Section-->
