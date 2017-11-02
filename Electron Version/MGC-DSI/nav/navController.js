@@ -87,6 +87,8 @@ myApp.controller('navController', ["$scope", "SlotMachine","Compliance", "IssueC
         }
     };
     
+    $scope.showSearchBox = false;
+    
     //function use by the nav "Search" button to move the slot machine location the user chosen  location
     $scope.searchSlotMachine = function(userLocation){
         
@@ -95,12 +97,13 @@ myApp.controller('navController', ["$scope", "SlotMachine","Compliance", "IssueC
         //function to setup the new current slot machine location and serial number
         $scope.setSlotMachine($scope.currentSlotMachine);
         
-        //Hides//close teh compliance section if the user navigate away
+        //Hides//close the compliance section if the user navigate away
         if($scope.showLowerHalf = true){
             ComplianceSection.closeLowerHalf()
             $scope.showLowerHalf = ComplianceSection.getShowLowerHalf();
-        }        
-        
+        }
+        //close the search box after the user clicks
+        $scope.showSearchBox = false;
     };
     
     //at start of app, the lowerhalf (compliance section) is hidden and upper showing

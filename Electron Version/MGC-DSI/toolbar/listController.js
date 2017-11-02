@@ -22,5 +22,9 @@ myApp.controller('listController',  function($scope, $state, Compliance, SlotMac
     $scope.printScreen = function(){
         window.print();
     }
+    
+    $scope.printPDF = function (){
+        Compliance.printPDF();
+    }
        
 });//end of buttonController

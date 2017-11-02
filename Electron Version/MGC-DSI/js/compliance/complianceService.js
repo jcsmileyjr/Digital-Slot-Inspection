@@ -2,7 +2,13 @@
 myApp.factory('Compliance', ["SlotMachine", "IssueCounter", "MealBook","Button", "Lights", "Touchscreen","Locks", "Reels", "Software", function (SlotMachine, IssueCounter, MealBook, Button, Lights, Touchscreen, Reels, Locks, Software) {
     
     //Enable the use of the file system module native to node.js use to read,write, or update files on the computer
-    var fs = require('fs');    
+    var fs = require('fs');  
+    
+    var jsPDF = require('jsPDF')
+    var doc = new jsPDF('p', 'mm', 'a4');
+    
+    //sets the path to the inspection.pdf file in the root directory in the client folder.
+    var inspectionPDF ='inspection.pdf';
     
     //sets the path to the compliance.json file in the root directory in the client folder.
     var complianceData = __dirname +'/compliance.json';
@@ -149,7 +155,28 @@ myApp.factory('Compliance', ["SlotMachine", "IssueCounter", "MealBook","Button",
 
             //array to hold a saved slot machine with compliance issues parsed from the complianceDownloaded string object
             compliance = JSON.parse(complianceStart); 
-        }//end of function
+        },//end of function
+        
+        printPDF: function(){
+            //Old Version: window.document.getElementById("printArea");
+            var source = $('#printArea').html();
+            
+            //copy from https://www.codeproject.com/Questions/1194625/How-to-split-pdf-into-multiple-pages-in-jspdf
+            specialElementHandlers = {
+                 // element with id of "bypass"
+                '#bypassme': function(element, renderer)
+                {
+                    // true = "handled elsewhere, bypass text extraction"
+                    return true
+                }
+            }
+            //doc.text(source, 10,10);
+            doc.fromHTML(source, 15, 15,{'width': 100, 'elementHandlers': specialElementHandlers});
+            //doc.setFontSize(20);
+            //doc.setTextColor(0,0,0);
+            doc.save('inspection.pdf');
+            
+        }
     }/*End of main Return*/
     
     

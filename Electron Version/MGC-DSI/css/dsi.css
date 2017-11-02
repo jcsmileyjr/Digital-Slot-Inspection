@@ -224,8 +224,13 @@ textarea {
     font-size: 150%;
 }
 
+/*indent information on the first line of elemnt, used primary on the list.html page*/
 .indentList {
-    text-indent: 5%;
+    text-indent: 15px;
+}
+
+.justifyAlign {
+    text-align: justify;
 }
 
 /*Got code from https://stackoverflow.com/questions/9140585/hr-not-seen-when-printing*/
@@ -237,6 +242,10 @@ hr {
     width: 100%;
     border: none;
     border-top: solid 1px #aaa;
+}
+
+.list-span {
+    padding-left: 20px;
 }
 
 /*Got this online somewhere. This hides html elements  that a dev don't want to be shown on the print document*/
