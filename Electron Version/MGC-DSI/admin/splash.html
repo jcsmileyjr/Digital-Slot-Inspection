@@ -1,39 +1,29 @@
-<div class="row navSection">
-    
-    <!--Sets the page to the size of the view-port -->
-    <!--Left-side view-port -->
-    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
-    
-    <!--inner view-port -->
-    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+<div class="row navSection  ">
+    <div class="col-xs-12  col-sm-12 col-md-12 col-lg-12 centerSplashDiv">
         <!-- Title of App -->
-        <div class="col-xs-12  col-sm-12 col-md-12 col-lg-12 centerAlign">
-            <h1>MGC Digital Slot Inspection</h1>
+        <br>
+        <div class="jumbotron centerAlign splashJumbotronBackgroundColor">
+            <h1 class="splashJumbotronMGC">M G C </h1>
+            <h3>Digital Slot Inspection</h3>
         </div>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>          
+        
         <!--Button for New Slot Inspection Wizard -->
         <div class="col-xs-12  col-sm-12 col-md-12 col-lg-12 centerAlign">
             <a ui-sref="wizard" class="btn btn-block active splashButtons" role="button">Click to start New Slot Inspection Wizard</a>
-        </div>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>          
-        <!--Butto to continue old slot inspection -->
+            <br>
+        </div>    
+        
+        <!--Button to continue old slot inspection -->
         <div class="col-xs-12  col-sm-12 col-md-12 col-lg-12 centerAlign">
             <a ng-click="continue()" class="btn btn-block active splashButtons" role="button">Click to Continue Slot Inpection</a>     
-        </div>
-    </div><!--end of inner view-port -->
-    
-    <!--right-side view-port -->
-    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
+        </div> 
+        
+        <!--Button to show version -->
+        <div class="col-xs-12  col-sm-12 col-md-12 col-lg-12 centerAlign">
+            <br>
+            <span class="label splashVersion">Version 2.2.0</span>
+        </div>      
+        
+    </div>
+
 </div><!--end of mealBook Page-->

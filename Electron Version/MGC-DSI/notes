@@ -1,3 +1,8 @@
+Version Guildlines:
+- Major: when you make incompatible API CHANGE (ex. online version to electron version)
+- Minor: when you add functionalbity that is backwards compatiable
+- Patch: when you fix bugs that is still backward compatiable
+
 GREAT NOTE, MAY HELP ONE DAY
     reload: true //will reload controller when state is being access    
     
@@ -165,3 +170,8 @@ old data
 1111111
 2222222
 9999999
+
+Version:
+2.0.0 Upgrade from online version to Election version
+2.1.0 add download pdf functionality from user testing/request
+2.2.0 update splash and wizard page format/CSS from software designer reccomendation

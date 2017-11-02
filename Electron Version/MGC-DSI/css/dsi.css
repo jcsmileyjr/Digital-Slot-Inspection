@@ -213,12 +213,6 @@ textarea {
     
 }
 
-/*Make the "start" button on the splash page grey with blue letters*/
-.splashButtons {
-    background-color: #CACACA;
-    color: navy;
-}
-
 /*increase the size of the back button in the wiard.html*/
 .backButtonIcon {
     font-size: 150%;
@@ -244,8 +238,40 @@ hr {
     border-top: solid 1px #aaa;
 }
 
-.list-span {
-    padding-left: 20px;
+/*center the div in the middle of the page with only CSS*/
+.centerSplashDiv {
+    margin: auto;
+    position: absolute;
+    top:0; left:0; bottom:0; right:0;
+    width: 50%; 
+    height: 50%;  
+    
+    background-color: #808080;
+    color: #003F0B;  
+}
+
+/*Make the "start" button on the splash page grey with blue letters*/
+.splashButtons {
+    background-color: #003F0B;
+    color: #CACACA;
+    border-radius: 24px;
+}
+
+/*background css for jumbotron on the splash.html page*/
+.splashJumbotronBackgroundColor {
+    background-color: #CACACA;
+}
+
+/*font css for MGC h1 element inside jumbotron on splash page*/
+.splashJumbotronMGC {
+    font-family: "Arial Black", Gadget, sans-serif;
+}
+
+/*css for version label element on splash page*/
+.splashVersion {
+    background-color: #CACACA;
+    color: #003F0B; 
+    border-radius: 24px;
 }
 
 /*Got this online somewhere. This hides html elements  that a dev don't want to be shown on the print document*/
