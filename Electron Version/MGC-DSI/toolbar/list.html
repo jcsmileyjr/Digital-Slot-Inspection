@@ -1,0 +1,73 @@
+<div class="row navSection" id="printArea">
+    
+    <!--Sets the page to the size of the view-port -->
+    <!--Left-side view-port -->
+    <div class="hidden-xs col-sm-2 col-md-2 col-lg-2"></div>
+    
+    <!--inner view-port -->
+    
+    <div class="col-xs-12  col-sm-8 col-md-8 col-lg-8">
+        <!--Title of Page -->
+        <h1 class="centerAlign">Compliance Violations</h1>
+        <p class="centerAlign complianceIssuesColor">Inspection Completion Progress: {{inspectionProgress| number:0}}%</p>
+
+        
+        <!-- Display slot inspection details -->
+        <p class="centerAlign">Casino Name: {{casinoName}}</p>
+        <p class="centerAlign">Start Date: {{date | date}}</p>
+        <p class="centerAlign">Agent Name: {{agentName}}</p>
+        <br>
+        <br>
+        <!-- Start of each slot machine row of information -->
+        <div class="row" ng-repeat="slot in compliance">
+            <hr>
+            <!--Left side of Row. Slot machine details -->
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <!--Serial Number -->
+                <p>Serial Number: <span class="list-span">{{slot.serialNumber}}</span></p>
+                <!--Slot Machine Status -->
+                <p>Status of Slot Machine: <span class="list-span">{{slot.completed}}</span></p>
+            </div><!--End of left side of Slot Machine row -->
+            <!--Right Side of row. Compliance issues found -->
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 complianceIssuesColor ">
+                <div class="row indentList" ng-if="slot.mealBook.length >= 1" ng-repeat="m in slot.mealBook">
+                    <p class="indentList">{{m}}</p>
+                </div>
+                <div class="row" ng-if="slot.button.length >= 1" ng-repeat="b in slot.button">
+                    <p class="indentList">{{b}}</p>
+                </div>
+                <div class="row" ng-if="slot.reels.length >= 1" ng-repeat="r in slot.reels">
+                    <p class="indentList">{{r}}</p>
+                </div>
+                <div class="row" ng-if="slot.software.length >= 1" ng-repeat="s in slot.software">
+                    <p class="indentList">{{s}}</p>
+                </div>
+                <div class="row" ng-if="slot.lights.length >= 1" ng-repeat="l in slot.lights">
+                    <p class="indentList">{{l}}</p>
+                </div>
+                <div class="row" ng-if="slot.touchscreen.length >= 1" ng-repeat="t in slot.touchscreen">
+                    <p class="indentList">{{t}}</p>
+                </div>
+                <div class="row" ng-if="slot.locks.length >= 1" ng-repeat="o in slot.locks">
+                    <p class="indentList">{{o}}</p>
+                </div>                  
+            </div>
+            <br>
+        </div><!--End of Slot Machine row of information -->
+        <br>
+        <div class="row centerAlign dontPrint" id= "bypassme">
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <button type="button" class="btn btn-lg green" ng-click="printScreen()">Print Summary</button>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <button type="button" class="btn btn-lg green" ng-click="printPDF()">Download Summary</button>
+            </div>              
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <button type="button" class="btn btn-lg green" ui-sref="nav">Done</button>
+            </div>           
+        </div>        
+    </div><!--end of inner view-port -->
+    
+    <!--right-side view-port -->
+    <div class="hidden-xs col-sm-2 col-md-2 col-lg-2"></div>
+</div><!--end of button Page-->

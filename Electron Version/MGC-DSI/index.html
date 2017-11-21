@@ -1,0 +1,94 @@
+<html lang="en">
+<head>
+<script>
+    window.jQuery = window.$ = require('jquery');
+</script>   
+<link rel="stylesheet" href="libs/bootstrap.min.css">
+<!-- Optional Bootstrap theme -->
+<link rel="stylesheet" href="libs/bootstrap-theme.min.css">
+<script src="libs/bootstrap.min.js"></script>
+<script src="libs/angular.min.js"></script>
+<script src="libs/angular-ui-router.min.js"></script>   
+
+<script src="js/app.js"></script><!--link to file containing state, .config, and .run app functions -->  
+<link rel="stylesheet" href="css/dsi.css">    
+    
+<!--Services -->    
+<script src="js/slotMachine/slotMachineService.js"></script>
+<script src="js/issueCounter/issueCounterService.js"></script>    
+<script src="js/mealBook/mealBookService.js"></script>
+<script src="js/compliance/complianceService.js"></script>
+<script src="js/buttons/buttonsService.js"></script>
+<script src="js/lights/lightsService.js"></script> 
+<script src="js/touchscreen/touchscreenService.js"></script>
+<script src="js/reels/reelsService.js"></script>
+<script src="js/locks/locksService.js"></script> 
+<script src="js/software/softwareService.js"></script>
+<script src="js/complianceSection/complianceSectionService.js"></script>
+<script src="js/inspectionDetails/inspectionDetailsService.js"></script>
+
+<!--Nav files -->    
+<script src="nav/nav.html"></script>
+<script src="nav/navController.js"></script>
+    
+<!-- list files -->    
+<script src="toolbar/list.html"></script>
+<script src="toolbar/listController.js"></script>    
+
+
+<!--Meal Book files -->    
+<script src="mealBook/mealBook.html"></script>
+<script src="mealBook/mealBookController.js"></script>
+    
+<!--Button files -->    
+<script src="buttons/button.html"></script>
+<script src="buttons/buttonController.js"></script>
+    
+<!--Lights files -->    
+<script src="lights/lights.html"></script>
+<script src="lights/lightsController.js"></script>
+    
+<!--Touchscreen files -->    
+<script src="touchscreen/touchscreen.html"></script>
+<script src="touchscreen/touchscreenController.js"></script>
+    
+<!--Locks files -->    
+<script src="locks/locks.html"></script>
+<script src="locks/locksController.js"></script>
+    
+<!--Reels files -->    
+<script src="reels/reels.html"></script>
+<script src="reels/reelsController.js"></script>
+    
+<!--Touchscreen files -->    
+<script src="software/software.html"></script>
+<script src="software/softwareController.js"></script>
+   
+<!--Admin files -->        
+<script src="admin/splash.html"></script>
+<script src="admin/wizard.html"></script>
+<script src="admin/wizardController.js"></script>
+   
+<!-- Need to fix    
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
+-->
+<link rel="stylesheet" href="libs/font-awesome-4.7.0/css/font-awesome.min.css">  
+<meta name="viewport" content="width=device-width, initial-scale=1 minimum-scale=1, maximum-scale=1" charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=11" />    
+<title>Digital Slot Inspection</title>
+</head>
+    
+<!--sets the HTML document to a angularJS app call myApp -->
+<body ng-app="DSI">
+  
+<div class="container-fluid">
+    <div class="row">
+        <!-- Start of page viewport-->
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div ui-view></div>
+        </div><!--End of page viewport, center column -->
+        
+    </div><!--end of row that contains the body -->
+</div><!--end of container of the row that contains the body -->
+</body>    
+</html>

@@ -1,0 +1,177 @@
+Version Guildlines:
+- Major: when you make incompatible API CHANGE (ex. online version to electron version)
+- Minor: when you add functionalbity that is backwards compatiable
+- Patch: when you fix bugs that is still backward compatiable
+
+GREAT NOTE, MAY HELP ONE DAY
+    reload: true //will reload controller when state is being access    
+    
+Great Note: File Organization:
+- File folders should be Uppercase, MealBook
+- Service files that support one file, html, should go in a folder with it instead of a seperate same name folder in js. Ex. js/mealbook(service, spec) and mealbook(html, spec).
+- js should be for shared javascript files like services and app.js
+
+***Place "container" and "container-fluids" inside your "rows" to cure whitespace on the side.
+
+Notice BIG BUG:
+When set in a support controller:
+    //use the SlotMachine service to get the slot machine at the current location to setup a new currentSlotMachine    
+    $scope.currentSlotMachine = SlotMachine.getCurrentSlotMachine();
+    
+    //assigns the slot machine, received as a parameter, location to the scope's location 
+    $scope.location= $scope.currentSlotMachine.location;
+        
+    //assigns the slot machine, received as a parameter, serial number to the scope's serial number 
+    $scope.serialNumber = $scope.currentSlotMachine.serialNumber;
+    
+    */ 
+This create a activeEditorChang listeners error in the chrome tools. It did the correct wanted behavior of dynamic change slotmachine location in other controllers. 
+
+- Internet Explorer issues
+<meta http-equiv="X-UA-Compatible" content="IE=11" />
+myApp.run(['ui-router', function ('ui-router') { }]);
+---------------------------------------------------------------------------
+State What and Why/behavior for Commits (not how). 
+Subject: State the feature/unit of work or Why. example: file name or Bug
+Mesage: state the what/why or expected behavior
+
+Services: State what area it supports, databases used, what functionality do in general.
+Controller: what file is it for and what/where funtionaily it provides
+html: what do the elements on it do
+Unit tests: state the feature or area for subject. Then name the unit test file and which file (service or controller) it tests and its purpose.
+---------
+Inital application setup Files
+The inital index.html and app.js used to start the development of the navigation feature. A libs folder containing relevent support files was copied from previous projects. 
+-----------
+Navigation Feature: nav.html
+The nav.html file with backward, forward, and search buttons for selecting slot machines. A location and serial number is displayed to identify the current slot machine. 
+----------
+Navigation Feature: navController.js
+The controller for the nav.html provides the functionality for the navigational buttons and updates the data to the output fields (location/serial number).
+-----------
+Navigation Feature: slotMachineService.js
+A service to support the navigation controller with a database of slot machines and functionality to support the navigation buttons.
+
+A service to support the button compliance issue with functionality to support the database of button issues, array of issues found, and button.html checkboxes.
+------------
+Button Feature: Unit Test
+The buttonsService.spec.js is a unit test for the Button Service file. It ensures the expected behavior or output of each method/function is acheived.
+
+Bug: Forward nav button not work after Search
+Issue: After a user press the search button for a slot machine and then use the forward button, the navigation is broken. 
+Fixed: I converted the index being assigned to currentLocation to a number in the search functionality. 
+-------------------------------------------------------------------------------
+Unit Tests: The describe state the unit of work, the expect states the expected behavior with context/behavior or senario/results. Example: addToCount(), increase count by one.
+- First develop the story, list the features from the story, then write unit tests to tests those those features.
+- Afterward write unit tests for invalid, bad, or edge cases
+-------------------------------------------------------------------------------
+
+var children = arrayA.concat(arrayB);
+var d = a.concat(b, c);
+ToDo:
+****Reopen a skip machine****
+
+- unit test for the Software controller 
+- Update unit test for navController
+- bug: After saving a slot and the next slot is already completed, the next slot gets the first data. Its not wiping clean. 
+- Update slotMachine service unit test 
+- Design Cog Page to display additonal choices such as help, list compliance issues.
+- ComplianceService unit test
+- Add ui-sef="nav" to each compliance issue chkbox and remove the "done" button for UX speed.
+- add message to ask user are they sure they want to navigate away if compliance issue found but not save OR disable naviation if numberOfIssues is above 0.
+
+- style guide
+- LESS
+
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 30px;
+}
+
+footer {
+    background-color: #0059B2;
+    color: #CACACA;
+    font-size: 110%
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 30px;
+}
+
+<nav>
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Digital Slot Inspection</a>
+                
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="fa fa-cog rightAlign" aria-hidden="true"></span></a>
+                <ul class="dropdown-menu">
+                    <li class="centerAlign">Tool-Bar</li>
+                    <li class="active"><a ui-sref="list">List of Found Compliance Issues</a></li>        
+                </ul>                
+            </li>
+        </ul>
+        
+
+    </div>    
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <footer >
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 leftAlign">
+                    Digital Slot Inspection 
+            </div>        
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 rightAlign">
+                <!--
+                <span class="fa fa-cog" aria-hidden="true" ui-sref="list"></span> 
+                -->
+                <a ui-sref="list">List of Found Compliance Issues</a>
+            </div>
+        </footer>     
+    </div>  
+</div>
+
+    /* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px) {
+    /*increase the size of the checkbox in mobile view */
+    input[type='checkbox'] {
+        width: 3vh;
+        height: 3vh;
+    }
+}
+
+#003F0B & cacaca
+
+old data
+    /*array of slot machine objects*/
+    //var slotMachines = [{"location":"1-1-1","serialNumber":100101,"EPROM":"ASDF1001","holdPercentage":89.1,"completed":"Incomplete"},{"location":"1-1-2","serialNumber":100102,"EPROM":"ASDF1002","holdPercentage":89.1,"completed":"Incomplete"},{"location":"1-1-3","serialNumber":100103,"EPROM":"ASDF1003","holdPercentage":89.1,"completed":"Incomplete"},{"location":"1-1-4","serialNumber":100104,"EPROM":"ASDF1004","holdPercentage":89.1,"completed":"Incomplete"},{"location":"1-1-5","serialNumber":100105,"EPROM":"ASDF1005","holdPercentage":89.1,"completed":"Incomplete"},{"location":"1-2-1","serialNumber":100201,"EPROM":"ASDF2001","holdPercentage":89.1,"completed":"Incomplete"},{"location":"1-2-2","serialNumber":100202,"EPROM":"ASDF2002","holdPercentage":89.1,"completed":"Incomplete"},{"location":"1-2-3","serialNumber":100203,"EPROM":"ASDF2003","holdPercentage":89.1,"completed":"Incomplete"},{"location":"1-2-4","serialNumber":100204,"EPROM":"ASDF2004","holdPercentage":89.1,"completed":"Incomplete"},{"location":"1-2-5","serialNumber":100205,"EPROM":"ASDF2005","holdPercentage":89.1,"completed":"Incomplete"}];
+    
+2-3-4
+3-4-5
+4-5-6
+5-6-7
+1-1-3
+3-7-4
+3-5-6
+7-4-1
+9-6-3
+    
+3333333
+4444444
+5555555
+6666666
+7777777
+8888888
+1111111
+2222222
+9999999
+
+Version:
+2.0.0 Upgrade from online version to Election version
+2.1.0 add download pdf functionality from user testing/request
+2.2.0 update splash and wizard page format/CSS from software designer reccomendation

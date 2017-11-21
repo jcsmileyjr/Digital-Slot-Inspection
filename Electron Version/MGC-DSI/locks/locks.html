@@ -1,0 +1,32 @@
+<div class="row navSection">
+    
+    <!--Sets the page to the size of the view-port -->
+    <!--Left-side view-port -->
+    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></div>
+    
+    <!--inner view-port -->
+    <div class="col-xs-10  col-sm-10 col-md-10 col-lg-10">
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                Current Location {{location}}
+            </div>
+
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                Current Serial Number {{serialNumber}}
+            </div>        
+
+            <div class="col-xs-12  col-sm-12 col-md-12 col-lg-12">
+                <h1>Locks Compliance Issues</h1>
+            </div>
+        </div>
+        <div class="row complianceChkboxSize" ng-repeat="issues in locks"  ng-class="{'completeColor':issues.found}">
+            <input type="checkbox" ng-model="issues.found" ng-change="checked($index)">{{issues.issue}}
+        </div>
+        <br>
+        <div class="row centerAlign"><button type="button" class="btn btn-lg green" ui-sref="nav">Done</button></div>
+        
+    </div><!--end of inner view-port -->
+    
+    <!--right-side view-port -->
+    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></div>
+</div><!--end of locks Page-->
