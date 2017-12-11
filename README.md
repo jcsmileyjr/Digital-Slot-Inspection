@@ -34,12 +34,19 @@ The original paper based process created an excessive amount of paperwork.  This
 
 ### This app was built with the following technologies:
 **GitHub’s Electron:** JavaScript framework that allow building of desktop applications using web technologies.
+
 **NodeJS:** Server side development platform created to run JavaScript
+
 **AngularJS:** JavaScript-based front-end framework for building single page web applications.
+
 **GitHub:** web-based version control repository and Internet hosting service
+
 **Bootstrap:** Web development framework for developing responsive, mobile first front-end projects
+
 **JavaScript:**  object-oriented programming language for web pages
+
 **HTML:**  Mark-up language for creating web pages
+
 **CSS:**  A formatting language for styling web pages
 
 *Author:* JC Smiley
