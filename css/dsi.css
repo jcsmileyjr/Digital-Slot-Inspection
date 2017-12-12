@@ -114,11 +114,12 @@
 /*Not sure how, but is crucial to eliminating the "body" margins  
 body { overflow: auto;} */
 
-/*css style for compliance buttons*/
+/*css style for compliance buttons. Use to be no font-size*/
 .complianceButtons {
     background-color: #003F0B;
     color: #CACACA;
-    margin-bottom: 5%;     
+    margin-bottom: 5%;
+    font-size: 150%;
 }
 
 /*css style for skip action buttons*/
@@ -161,8 +162,9 @@ body { overflow: auto;} */
     font-size: 200%;
 }
 
+/*Use to be 200%. This control the size of the navigational conrols on the nav.html page*/
 .navControlSize {
-    font-size: 200%;
+    font-size: 500%;
 }
 
 
@@ -211,19 +213,18 @@ textarea {
     
 }
 
-/*Make the "start" button on the splash page grey with blue letters*/
-.splashButtons {
-    background-color: #CACACA;
-    color: navy;
-}
-
 /*increase the size of the back button in the wiard.html*/
 .backButtonIcon {
     font-size: 150%;
 }
 
+/*indent information on the first line of elemnt, used primary on the list.html page*/
 .indentList {
-    text-indent: 5%;
+    text-indent: 15px;
+}
+
+.justifyAlign {
+    text-align: justify;
 }
 
 /*Got code from https://stackoverflow.com/questions/9140585/hr-not-seen-when-printing*/
@@ -235,6 +236,42 @@ hr {
     width: 100%;
     border: none;
     border-top: solid 1px #aaa;
+}
+
+/*center the div in the middle of the page with only CSS*/
+.centerSplashDiv {
+    margin: auto;
+    position: absolute;
+    top:0; left:0; bottom:0; right:0;
+    width: 50%; 
+    height: 50%;  
+    
+    background-color: #808080;
+    color: #003F0B;  
+}
+
+/*Make the "start" button on the splash page grey with blue letters*/
+.splashButtons {
+    background-color: #003F0B;
+    color: #CACACA;
+    border-radius: 24px;
+}
+
+/*background css for jumbotron on the splash.html page*/
+.splashJumbotronBackgroundColor {
+    background-color: #CACACA;
+}
+
+/*font css for MGC h1 element inside jumbotron on splash page*/
+.splashJumbotronMGC {
+    font-family: "Arial Black", Gadget, sans-serif;
+}
+
+/*css for version label element on splash page*/
+.splashVersion {
+    background-color: #CACACA;
+    color: #003F0B; 
+    border-radius: 24px;
 }
 
 /*Got this online somewhere. This hides html elements  that a dev don't want to be shown on the print document*/
