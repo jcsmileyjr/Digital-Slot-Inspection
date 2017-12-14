@@ -2,7 +2,7 @@
 myApp.factory('InspectionDetails', function () {
 
     //array to hold a saved slot machine with compliance issues 
-    var details = {"casinoName":" choose a casino", "date": "choose a date", "agentName": "who is this"};
+    var details = {"casinoName":" Atlantic City Treasures", "date": "January 1, 2018", "agentName": "Agent Smiley"};
     
     return {
         

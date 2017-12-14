@@ -1,4 +1,4 @@
-<div class="row navSection">
+<div class="row navSection" id="printArea">
     
     <!--Sets the page to the size of the view-port -->
     <!--Left-side view-port -->
@@ -8,102 +8,63 @@
     
     <div class="col-xs-12  col-sm-8 col-md-8 col-lg-8">
         <!--Title of Page -->
-        <h1 class="centerAlign">List of Slot Machines with Compliance Violations</h1>
-        <p class="centerAlign complianceIssuesColor">Inspection Completion Progress: {{inspectionProgress}}%</p>
+        <h1 class="centerAlign">Compliance Violations</h1>
+        <p class="centerAlign complianceIssuesColor">Inspection Completion Progress: {{inspectionProgress| number:0}}%</p>
+
         
         <!-- Display slot inspection details -->
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></div>
-            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    Casino Name:
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-64 leftAlign">
-                    {{casinoName}}
-                </div>
-                <!--date -->
-                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    Date of Inspection:
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 leftAlign">
-                    {{date}}
-                </div>  
-                <!--Agent Name -->
-                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    Agent Name:
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 leftAlign">
-                    {{agentName}}
-                </div>
-            </div>    
-            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></div>
-        </div>
-        
+        <p class="centerAlign">Casino Name: {{casinoName}}</p>
+        <p class="centerAlign">Start Date: {{date | date}}</p>
+        <p class="centerAlign">Agent Name: {{agentName}}</p>
+        <br>
+        <br>
         <!-- Start of each slot machine row of information -->
         <div class="row" ng-repeat="slot in compliance">
             <hr>
             <!--Left side of Row. Slot machine details -->
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                <!--Title of Serial Number -->
-                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                    Serial Number
-                </div>
-                <!--Serial Number Data -->
-                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                    {{slot.serialNumber}}
-                </div>
-                <!--Title of Number of Issues -->
-                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                    Number of Issues Found
-                </div>
-                <!--Number of Issues Data -->
-                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                    {{slot.numberOfIssues}}
-                </div>
-                <!--Title of Slot Machine Status -->
-                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                    Status of Slot Machine
-                </div>
-                <!--Slot Machine Data -->
-                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                    {{slot.completed}}
-                </div>
-                <br>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <!--Serial Number -->
+                <p>Serial Number: <span class="list-span">{{slot.serialNumber}}</span></p>
+                <!--Slot Machine Status -->
+                <p>Status of Slot Machine: <span class="list-span">{{slot.completed}}</span></p>
             </div><!--End of left side of Slot Machine row -->
             <!--Right Side of row. Compliance issues found -->
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 complianceIssuesColor ">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 complianceIssuesColor ">
                 <div class="row indentList" ng-if="slot.mealBook.length >= 1" ng-repeat="m in slot.mealBook">
-                    {{m}}
+                    <p class="indentList">{{m}}</p>
                 </div>
                 <div class="row" ng-if="slot.button.length >= 1" ng-repeat="b in slot.button">
-                    {{b}}
+                    <p class="indentList">{{b}}</p>
                 </div>
                 <div class="row" ng-if="slot.reels.length >= 1" ng-repeat="r in slot.reels">
-                    {{r}}
+                    <p class="indentList">{{r}}</p>
                 </div>
                 <div class="row" ng-if="slot.software.length >= 1" ng-repeat="s in slot.software">
-                    {{s}}
+                    <p class="indentList">{{s}}</p>
                 </div>
                 <div class="row" ng-if="slot.lights.length >= 1" ng-repeat="l in slot.lights">
-                    {{l}}
+                    <p class="indentList">{{l}}</p>
                 </div>
                 <div class="row" ng-if="slot.touchscreen.length >= 1" ng-repeat="t in slot.touchscreen">
-                    {{t}}
+                    <p class="indentList">{{t}}</p>
                 </div>
                 <div class="row" ng-if="slot.locks.length >= 1" ng-repeat="o in slot.locks">
-                    {{o}}
+                    <p class="indentList">{{o}}</p>
                 </div>                  
             </div>
             <br>
         </div><!--End of Slot Machine row of information -->
         <br>
-        <div class="row centerAlign dontPrint">
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                <button type="button" class="btn btn-lg green" ng-click="printScreen()">Print Summery</button>
-            </div>            
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <div class="row centerAlign dontPrint" id= "bypassme">
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <button type="button" class="btn btn-lg green" ng-click="printScreen()">Print Summary</button>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <button type="button" class="btn btn-lg green" ng-click="printPDF()">Download Summary</button>
+            </div>              
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                 <button type="button" class="btn btn-lg green" ui-sref="nav">Done</button>
-            </div>             
+            </div>           
         </div>        
     </div><!--end of inner view-port -->
     
